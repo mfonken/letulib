@@ -1,0 +1,112 @@
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/opencms/opencms/system/modules/edu.letu.templates.main/resources/jqBootstrapValidation-136/jqBootstrapValidation-bootstrap3.js"></script>
+    <script type="text/javascript">
+    var jQuery_bootstrap = $.noConflict(true);
+    jQuery_bootstrap(function() { jQuery_bootstrap(".form-validation").jqBootstrapValidation(); });
+    </script>
+    <script type="text/javascript">
+    function getElementTop(id) {
+      var offsetTrail = document.getElementById(id);
+      var offsetTop = 0;
+      while (offsetTrail) {
+        offsetTop += offsetTrail.offsetTop;
+        offsetTrail = offsetTrail.offsetParent;
+      }
+
+      return offsetTop;
+    }
+
+    jQuery_bootstrap(window).on('load resize', function() {
+      var windowWidth = jQuery_bootstrap(window).width();
+      var windowHeight = jQuery_bootstrap(window).height();
+      var sidebarMinWidth = 150;
+      var sidebarMaxWidth = 250;
+      var sidebarLeft = (windowWidth / 2) + 610;
+      var sidebarWidth = (windowWidth / 2) - 620;
+      sidebarWidth = Math.min(sidebarWidth, sidebarMaxWidth);
+      sidebarWidth = Math.max(sidebarWidth, sidebarMinWidth);
+      document.getElementById('nextsteps-sidebar').setAttribute("style","left: " + sidebarLeft + "px; width: " + sidebarWidth + "px;");
+      document.getElementById('nextsteps-sidebar').style.left=sidebarLeft + 'px';
+      document.getElementById('nextsteps-sidebar').style.width=sidebarWidth + 'px';
+
+      var contentTop = getElementTop('body-wrapper-resp');
+      var contentHeight = windowHeight - contentTop - 30;
+
+      document.getElementById('body-wrapper-resp').setAttribute("style","min-height: " + contentHeight + "px;");
+      document.getElementById('body-wrapper-resp').style.minHeight = contentHeight + 'px';
+
+      //    document.getElementById('nextsteps-sidebar').setAttribute("style","width: " + width + "px");
+      //    document.getElementById('nextsteps-sidebar').style.width=width + 'px';
+    });
+    </script>
+
+
+
+    <div class="modal fade" id="askusModal" tabindex="-1" role="dialog" aria-labelledby="askusModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    function submitAskus(formData) {
+      jQuery_bootstrap.ajax({
+        type: "POST",
+        cache: false,
+        url: "/opencms/opencms/system/modules/edu.letu.templates.main/pages/askus.submit-ajax.jsp",
+        data: formData,
+        success: function(data) {
+          var dataLength = formData.length;
+          var category = '';
+          for (i=0; i<dataLength; i++) {
+            if (formData[i].name == 'topic') { category = formData[i].value; }
+          }
+          ga('send', 'event', 'WebsiteContactQuestion', 'Submitted', category);
+          jQuery_bootstrap('#askusModal .modal-body').html(data);
+          jQuery_bootstrap('#askusModal .modal-footer').html('<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>');
+        }
+      });
+    }
+
+    jQuery_bootstrap(document).ready(function() {
+      jQuery_bootstrap(document).on("submit","#templateContact", function() {
+        submitAskus(jQuery_bootstrap(this).serializeArray());
+        return false;
+      });
+    });
+    </script>
+
+    <div class="modal fade" id="referfriendModal" tabindex="-1" role="dialog" aria-labelledby="referfriendModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    function submitReferral(formData) {
+      jQuery_bootstrap.ajax({
+        type: "POST",
+        cache: false,
+        url: "/opencms/opencms/system/modules/edu.letu.templates.main/pages/referfriend.submit-ajax.jsp",
+        data: formData,
+        success: function(data) {
+          ga('send', 'event', 'NextStepsReferFriend', 'Submitted');
+          jQuery_bootstrap('#referfriendModal .modal-body').html(data);
+          jQuery_bootstrap('#referfriendModal .modal-footer').html('<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>');
+        }
+      });
+    }
+
+    jQuery_bootstrap(document).ready(function() {
+      jQuery_bootstrap(document).on("submit","#templateReferral", function() {
+        submitReferral(jQuery_bootstrap(this).serializeArray());
+        return false;
+      });
+    });
+    </script>

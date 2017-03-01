@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Test Page | Development</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="http://www.letu.edu/opencms/export/system/modules/edu.letu.templates.main/resources/fontawesome-300/css/font-awesome.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="stylesheets/letu.css"/>
+  <link type="text/css" rel="stylesheet" href="stylesheets/letulib.css"/>
+  <link type="text/css" rel="stylesheet" href="stylesheets/letulibresponsive.css"/>
+  <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!--link rel="stylesheet" href="https://static2.worldcat.org/20161222100240/resources/core-ui/css/core-ui-components.css"/-->
+  <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" />
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="https://static2.worldcat.org/20161222100240/resources/javascript/vendor/angularui/ui-bootstrap-tpls-0.12.1.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.min.js"></script>
+
+  <script type="text/javascript">
+  window.swapem = function(e) {
+    var backupUrl = e.getAttribute('data-backup-src');
+    if (e.src.indexOf(backupUrl) == -1) {
+      e.src = backupUrl;
+    }
+  };
+  var requireConfig = {
+    baseUrl: 'https://static2.worldcat.org/20161222100240/resources/javascript/',
+    paths: {
+      jquery: 'https://static2.worldcat.org/20161222100240/resources/javascript/vendor/jquery2/jquery-2.1.0',
+      meld: 'https://static2.worldcat.org/20161222100240/resources/javascript/vendor/meldjs/meld',
+      director: 'https://static2.worldcat.org/20161222100240/resources/javascript/vendor/director/director',
+      'mutation-observer': 'https://static2.worldcat.org/20161222100240/resources/javascript/vendor/polymer/mutation-observer',
+      'core-ui': 'https://static2.worldcat.org/20161222100240/resources/core-ui/js/core-ui',
+      'jqueryui': 'https://static2.worldcat.org/20161222100240/resources/javascript/vendor/jquery-ui/1.11.1/jquery-ui',
+      'jquerymigrate': 'https://static2.worldcat.org/20161222100240/resources/javascript/vendor/jquery-migrate/1.2.1/jquery-migrate'
+    }
+  }
+  </script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+  <!--link rel="stylesheet" href="https://static2.worldcat.org/20161222100240/resources/css/academic/landingPage.css"/-->
+
+
+
+</head>
+
+<body>
+  <div class="global row">
+    <div class="g-nav">
+      <div class="flank left">
+        <div class="inner">
+          <div class="guides">
+            <h2>Guides</h2>
+            <ul class="menu">
+              <li>
+                <a href="https://letulibrary.on.worldcat.org/discovery">
+                  <span class="fa fa-search left"></span>
+                  Search
+                  <span class="fa fa-search right"></span>
+                </a>
+              </li>
+              <li>
+                <a href="http://lib-guides.letu.edu/az.php">
+                  <span class="fa fa-database left"></span>
+                  Databases
+                  <span class="fa fa-database right"></span>
+                </a>
+              </li>
+              <li>
+                <a href="http://lib-guides.letu.edu">
+                  <span class="fa fa-map-o left"></span>
+                  Guides
+                  <span class="fa fa-map-o right"></span>
+                </a>
+              </li>
+              <li>
+                <a href="http://lib-guides.letu.edu/libraryservices/ill">
+                  <span class="fa fa-book left"></span>
+                  Loan
+                  <span class="fa fa-book right"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flank right">
+        <div class="inner">
+          <div class="info">
+            <h2>Info</h2>
+            <ul class="menu">
+              <li>
+                <a href="http://lib-guides.letu.edu/libraryservices/hours">
+                  <span class="fa fa-clock-o left"></span>
+                  Hours
+                  <span class="fa fa-clock-o right"></span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:library@letu.edu?subject=Ask%20a%20Librarian">
+                  <span class="fa  fa-comments-o left"></span>
+                  Ask a Librarian
+                  <span class="fa  fa-comments-o right"></span>
+                </a>
+              </li>
+              <li>
+                <a href="/opencms/opencms/_Academics/library/history.html">
+                  <span class="fa fa-university left"></span>
+                  Letu History
+                  <span class="fa fa-university right"></span>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="menu">
+              <li>
+                <a href="https://letulibrary.on.worldcat.org/discovery">
+                  <span class="fa fa-user-circle left"></span>
+                  Services
+                  <span class="fa fa-user-circle right"></span>
+                </a>
+              </li>
+              <li>
+                <a href="http://lib-guides.letu.edu/az.php">
+                  <span class="fa fa-info-circle left"></span>
+                  About
+                  <span class="fa fa-info-circle right"></span>
+                </a>
+              </li>
+              <li>
+                <a href="http://lib-guides.letu.edu/libraryservices/ill">
+                  <span class="fa fa-commenting left"></span>
+                  Contact
+                  <span class="fa fa-commenting right"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="g-header">
+        <h1 class="titlebar">Margaret Estes Library</h1>
+      </div>
+      <div class="largeBanner">
+        <div class="imageContainer">
+          <img class="bannerImage" alt="" id="iimg_-695530575" src="images/bookshelf.jpg" />
+          <!-- Source - http://cssdeck.com/labs/0chmqae2 -->
+
+
+          <form role="form" id="g-search-form" name="search-form" class="g-core-form" action="https://letulibrary.on.worldcat.org/search" method="get"  data-stat-page-section="Header" data-stat-link-type="CUSTOM" data-stat-name="Search Button" >
+            <div class="field" id="searchform">
+              <input type="hidden" id="dbList" name="databaseList" value=""/>
+              <input type="search" id="query" onblur="this.placeholder = 'What are you looking for?'" onfocus="this.placeholder = ''" data-autocomplete-source="/ajax/searchsuggest" data-autocomplete-query="term" data-action="autocomplete" data-stat-page-section="Header" data-stat-name="Primary Search Box" name="queryString" required autocomplete="off" autofocus/>
+              <button type="submit" id="headersubmit" class="core-button core-button-primary  headersubmit core-button-icon">
+                <img src="images/catalog.png" width="20" height="20" />
+              </button>
+            </div>
+          </form>
+
+          <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        </div>
+      </div>
+      <div class="row" id="folderNavigation">
+        <div class="col-xs-12">
+          <ul class="folderNavigationList">
+          </ul>
+        </div>
+      </div>
+      <div class="body-wrapper icon-links" id="body-wrapper-resp">
+        <div class="body-content-wrapper">
+          <div class="col-xs-12 body-singlecolumn">
+            <div class="main-icons">
+              <ul class="sets">
+                <li id="catalog">
+                  <a href="https://letulibrary.on.worldcat.org/discovery">
+                    <img src="images/catalog.png" id="iimg_119838000" alt="Catalog" />
+                  </a>
+                  <a href="https://letulibrary.on.worldcat.org/discovery">WorldCat</a>
+                </li>
+                <li id="databases">
+                  <a href="http://lib-guides.letu.edu/az.php">
+                    <img src="images/books.png" id="iimg_2013332439" alt="Research Guides" />
+                  </a>
+                  <a href="http://lib-guides.letu.edu/az.php" target="_self">Research Databases</a>
+                </li>
+
+                <li id="ill">
+                  <a href="http://lib-guides.letu.edu/libraryservices/ill">
+                    <img src="images/ill.png" id="iimg_209168843" alt="Inter Library Loan" />
+                  </a>
+                  <a href="http://lib-guides.letu.edu/libraryservices/ill">Inter-Library Loan</a>
+                </li>
+              </ul>
+              <ul class="info">
+                <li id="info">
+                  <a title="Library Hours" target="_self" href="http://lib-guides.letu.edu/libraryservices/hours">
+                    <img alt="Library Hours" src="images/hours.png" />
+                  </a>
+                  <a title="Library Hours" target="_self" href="http://lib-guides.letu.edu/libraryservices/hours">Hours</a>
+                </li>
+                <li id="ask">
+                  <a href="mailto:library@letu.edu?subject=Ask%20a%20Librarian">
+                    <img alt="Ask A Librarian" src="images/ask-a-librarian.png" />
+                  </a>
+                  <a href="mailto:library@letu.edu?subject=Ask%20a%20Librarian">Ask a Librarian</a>
+                </li>
+                <li id="history">
+                  <a title="Library Hours" target="_self" href="/opencms/opencms/_Academics/library/history.html">
+                    <img alt="LeTourneau History" src="images/library.png"/>
+                  </a>
+                  <a title="LeTourneau History" href="/opencms/opencms/_Academics/library/history.html">LeTourneau History</a>
+                </li>
+              </ul>
+            </div>
+            <hr/>
+            <div class="row">
+              <div class="listMenu">
+                <div class="col-sm-4 col-md-4">
+                  <h2>Services</h2>
+                  <ul>
+                    <li><a href="http://lib-guides.letu.edu/libraryservices/">Library Services</a></li>
+                    <li><a href="http://lib-guides.letu.edu/">Research Guides</a></li>
+                    <li><a href="/opencms/opencms/_Academics/library/history.html">LeTourneau History and Archives</a></li>
+                    <li><a title="InterLibrary Loan Services" target="_self" href="/opencms/opencms/_Academics/library/services/ill/index.html">InterLibrary Loan Services</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                  <h2>About</h2>
+                  <ul>
+                    <li><a href="http://lib-guides.letu.edu/libraryservices/hours">Operating Hours</a></li>
+                    <li><a href="/opencms/opencms/_Academics/library/info/policies/copyright.html">Copyright Policy</a></li>
+                    <li><a href="/opencms/opencms/_Other-Resources/Office-of-the-Provost/Resources-for-Current-Faculty/dpps-provost.html">Library and University Policies</a></li>
+                    <li><a href="http://lib-guides.letu.edu/libraryservices/staff">Staff</a></li>
+                    <li><a href="mailto:library@letu.edu?subject=Ask%20a%20Librarian">Ask a Librarian</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                  <h2>Contact Us</h2>
+                  <ul style="list-style:none">
+                    <li>Margaret Estes Library</li>
+                    <li>LeTourneau University</li>
+                    <li>2100 S. Mobberly Ave</li>
+                    <li>Longview, TX  76502</li>
+                    <li>903-233-3260</li>
+                    <li><a href="mailto:library@letu.edu">library@letu.edu</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- row -->
+
+
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_content">
+      <a href="#" class="btt"><i class="fa fa-chevron-up"></i>Top</a>
+      <div class="footer_column footer_column_1">
+        <h3 class="contact_us">
+          <a href="/">Margaret Estes Library</a>
+        </h3>
+        <div class="dept_info">
+          <ul>
+            <li>LeTourneau University</li>
+            <li>2100 S. Mobberly Ave</li>
+            <li>Longview, TX 76502</li>
+            <li>(903)-233-3260</li>
+            <li><a href="mailto:library@letu.edu">library@letu.edu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer_column footer_column_2" >
+        <div class="txst_logo">
+          <a class="image_link" href="http://www.letu.edu" style="opacity: 0.9">
+            <img alt="LeTourneau University - Every workplace, every nation. " src="images/letu_logo.png" width="100" height="100">
+          </a>
+        </div>
+      </div>
+      <div class="footer_column footer_column_3">
+        <h3>
+          <a>Next Steps</a>
+        </h3>
+        <ul>
+          <li>
+            <a href="http://www.letu.edu/_Admissions/index.html">
+              <span class="fa fa-file"></span>
+              Apply
+            </a>
+          </li>
+          <li>
+            <a href="https://my.letu.edu/ICS/Home_-_Public.jnz?portlet=Make_an_Inquiry&formid=43">
+              <span class="fa fa-envelope"></span>
+              Request Information
+            </a>
+          </li>
+          <li>
+            <a href="/opencms/opencms/system/modules/edu.letu.templates.main/pages/askus.form.jsp" data-toggle="modal" data-target="#askusModal">
+              <span class="fa fa-question-circle"></span>
+              Ask a Question
+            </a>
+          </li>
+          <li>
+            <a href="http://www.letu.edu/_Admissions/visit/">
+              <span class="fa fa-calendar"></span>
+              Schedule a Visit
+            </a>
+          </li>
+          <li>
+            <a href="https://ssl.letu.edu/ecommerce/tradAppLogin.cgi">
+              <span class="fa fa-credit-card"></span>
+              Pay Deposit
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- footer -->
+  <script src="https://static2.worldcat.org/20161222100240/resources/javascript/bundle/all-jquery-2.min.js"></script>
+
+  <script>
+  $.ajaxSetup({
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('X-OCLC-RequestId', "022246aa-0759-4ed2-8050-82a80f033c53");
+      xhr.setRequestHeader('X-OCLC-ParentId',  "e66a5f84-f495-46a7-898e-c30526ddc104");
+    }
+  });
+  </script>
+
+  <script>
+  requirejs.config(requireConfig);
+  require(['jquery', 'init/setup', 'module/stats'], function() {} );
+  </script>
+</body>
+</html>
+
+<!--div w3-include-html="maincontainer.html"></div-->
+<!--
+<div class="g-header">
+<p>Header</p>
+</div>
+<div class="main">
+<p>Main</p>
+</div>
+<div class="g-footer">
+<p>Footer</p>
+</div>
+
+<script>
+w3IncludeHTML();
+</script>
+-->

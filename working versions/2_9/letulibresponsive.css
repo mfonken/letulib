@@ -1,0 +1,346 @@
+@media screen and (max-width: 519px) {
+  .listMenu ul
+  {
+    list-style: none;
+    margin-left: 25px;
+    margin-bottom: 25px;
+  }
+
+  .main-icons img {
+    margin: 0.4rem 1rem 0 0;
+  }
+  .main-icons li a {
+    font-size: 100%;
+    line-height: 100%;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  * {
+    font-size: 50%;
+  }
+  .global .container {
+      padding: 0 5.4rem;
+  }
+
+  .global .container > .corner {
+      right: 5.4rem;
+  }
+
+  .global .container > .corner.left {
+      left: 5.4rem;
+  }
+
+  .g-header h1 {
+      margin-left: 0;
+      padding-top: 1.8rem;
+  }
+
+  .g-header h1 img {
+      height: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 690px) {
+  .footer_content span {
+    font-size: 2.0rem;
+  }
+  .footer_content ul {
+    font-size: 2.0rem;
+  }
+
+  .main-icons img {
+    float: center;
+    width: 128px;
+    height: 128px;
+  }
+
+  .main-icons ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin: 1rem;
+  }
+
+  .main-icons li {
+    padding: 0;
+    float: left;
+    margin: 0;
+    background: none !important;
+    display: block;
+    width: 33%;
+  }
+
+  .main-icons li a {
+    text-align: center;
+    font-size: 150%;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    //padding: 0rem 3.0rem 0.9rem 3.0rem;
+    vertical-align: center;
+  }
+}
+
+@media screen and (min-width: 856px) {
+    .g-header h1 {
+        text-align: left;
+        float: left;
+    }
+
+    .g-header .nav-trigger {
+        display: none;
+    }
+
+    .g-header .user-nav, .g-header .login {
+        position: relative;
+        float: right;
+        top: auto;
+        right: auto;
+        margin-right: -1.8rem;
+    }
+
+    .g-header .user-nav h2 {
+        display: block;
+        width: 20rem;
+        position: absolute;
+        top: 0;
+        left: -20rem;
+        padding: 2rem 0;
+        font-size: 1.6rem;
+        color: hsl(214, 25%, 60%);
+        text-align: right;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    .g-header .user-nav > a {}
+
+    .g-header .user-nav .menu {
+        right: 50%;
+        margin-right: -6.8rem;
+    }
+
+    .content {
+        width: 75%;
+        float: right;
+        position: relative;
+    }
+
+    .g-nav {
+        display: block;
+        float: left;
+        width: 25%;
+    }
+
+    .g-nav li .subitem {
+        width: 24rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: -24rem;
+    }
+
+    .g-nav li.has-subitem.current > a:after {
+        border-width: 1.8rem 1.4rem 1.8rem 0;
+        border-bottom-color: transparent;
+        border-right-color: hsl(214, 7%, 14%);
+        top: 0;
+        left: auto;
+        right: 0;
+        bottom: auto;
+        //z-index: 5000;
+    }
+
+    .g-nav li .subitem.number {
+        width: 20rem;
+        margin-right: -20rem;
+    }
+
+    .g-nav li .form .message textarea, .g-nav li .form .message pre {
+        max-height: 24rem;
+        overflow-y: scroll;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .global {
+        padding: 0 20.0rem;// 3.0rem 0;
+        //background: rgba(0,0,0,0.35);
+    }
+
+    .g-header {
+        padding: 2.0rem 0 0;
+    }
+
+    .g-header h1 {
+        margin: 1.05rem 0 0 1.05rem;
+        position: relative;
+        padding: 0;
+    }
+
+    .g-header h1 img {
+        height: 2.35rem;
+    }
+
+    .g-header .user-nav h2 {
+        padding-top: 1.8rem;
+    }
+
+    .g-header .login, .g-header .user-nav > a {
+        padding-bottom: 1.4rem;
+        padding-top: 1.7rem;
+    }
+
+    .content {
+        width: 100%;
+        float: none;
+    }
+
+    .g-nav {
+        display: block;
+        float: none;
+        width: auto;
+        padding: 0;
+    }
+
+    .g-nav ul {
+        padding: 0.6rem 0;
+    }
+
+    .g-nav .flank {
+        position: absolute;
+        top: 0;
+        width: 20.0rem;
+        //z-index: 50;
+    }
+
+    .g-nav .flank .inner {
+        position: fixed;
+        width: 20.0rem;
+    }
+
+    .g-nav .flank.left {
+        left: 0;
+        text-align: right;
+    }
+
+    .g-nav .flank.left li a {
+        padding: 0 4.8rem 0 2.4rem;
+    }
+
+    .g-nav .flank.left li a span {
+        left: auto;
+        right: 2.4rem;
+    }
+
+    .g-nav .flank.right {
+        right: 0;
+    }
+
+    .g-nav .flank.right li a {
+        padding: 0 2.4rem 0 4.8rem;
+        //color:#333;
+        //font-weight: bold;
+    }
+
+    .g-nav .flank.right li a span {
+        left: 1.0rem;
+    }
+
+    .g-nav .flank.right .contact li a span {
+        left: 2.2rem;
+    }
+
+    .g-nav h2 {
+        padding: 4.7rem 2.4rem 1.4rem;
+    }
+
+    .g-nav li .subitem {
+        left: auto;
+        right: 20.0rem;
+        margin: 0;
+    }
+
+    .g-nav li .subitem.number {
+        margin: 0;
+    }
+
+    .g-nav li.has-subitem.current > a:after {
+        border-width: 2rem 0 2rem 1.4rem;
+        border-right-color: transparent;
+        border-left-color: hsl(214, 7%, 14%);
+        left: 0;
+        right: auto;
+    }
+}
+
+@media screen and (max-width: 1023px) and (max-height: 840px) {
+    .g-nav .formats li {
+        display: none;
+    }
+
+    .g-nav .formats #all {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 820px) {
+    .g-nav .feedback li .subitem {
+        bottom: 0;
+        position: absolute;
+        top: auto;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-height: 932px) {
+    .g-nav .feedback li .subitem {
+        bottom: 0;
+        position: absolute;
+        top: auto;
+    }
+}
+
+@media screen and (min-width: 1720px) and (max-height: 1020px) {
+    .g-nav .feedback li .subitem {
+        bottom: 0;
+        position: absolute;
+        top: auto;
+    }
+}
+
+@media screen and (min-width: 2000px) and (max-height: 1100px) {
+    .g-nav .feedback li .subitem {
+        bottom: 0;
+        position: absolute;
+        top: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 504px) {
+    .g-nav .flank .inner {
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-height: 566px) {
+    .g-nav .flank .inner {
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1720px) and (max-height: 605px) {
+    .g-nav .flank .inner {
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 2000px) and (max-height: 652px) {
+    .g-nav .flank .inner {
+        position: relative;
+    }
+}

@@ -1,0 +1,91 @@
+/* Global Colors */
+/* Element Colors */
+/* Element sizes */
+/* Width breaklines */
+/* Height breaklines */
+/*** all ***/
+/* line 5, ../sass/lib.scss */
+* { box-sizing: border-box; }
+
+/* line 10, ../sass/lib.scss */
+body { background: #16161c; color: white; line-height: 1; font-family: 'Avenir LT W01 35 Light', Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; }
+
+/*** global ***/
+/* line 18, ../sass/lib.scss */
+.global { margin: 0 auto; max-width: 150rem; position: relative; /* global size */ /*** global g-nav ***/ /*** global content ***/ }
+@media screen and (min-width: 1024px) { /* line 18, ../sass/lib.scss */
+  .global { padding: 0 20em; } }
+/* line 30, ../sass/lib.scss */
+.global .g-nav { padding-bottom: 2.4rem; padding: 0; float: none; width: auto; display: none; /*** global g-nav flank ***/ /*** global g-nav flank left ***/ /*** global g-nav flank right ***/ }
+@media screen and (min-width: 856px) { /* line 30, ../sass/lib.scss */
+  .global .g-nav { display: block; float: left; width: 25%; } }
+@media screen and (min-width: 1024px) { /* line 30, ../sass/lib.scss */
+  .global .g-nav { display: block; } }
+/* line 48, ../sass/lib.scss */
+.global .g-nav .flank { top: 0; height: 100%; text-align: left; /*** global g-nav inner ***/ }
+@media screen and (min-width: 1024px) { /* line 48, ../sass/lib.scss */
+  .global .g-nav .flank { position: absolute; top: 0; width: 20.0rem; } }
+/* line 59, ../sass/lib.scss */
+.global .g-nav .flank .inner { /*** global g-nav h2 ***/ /*** global g-nav ul ***/ }
+@media screen and (min-width: 1024px) { /* line 59, ../sass/lib.scss */
+  .global .g-nav .flank .inner { position: fixed; width: 20em; } }
+/* line 67, ../sass/lib.scss */
+.global .g-nav .flank .inner h2 { text-transform: uppercase; font-size: 1.0em; font-weight: 300; color: white; margin: 0 0 0.6rem; padding: 2.4rem 1.8rem 1rem; border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1); }
+/* line 78, ../sass/lib.scss */
+.global .g-nav .flank .inner ul { list-style: none; padding: 0.6rem 0; /*** global g-nav li ***/ }
+/* line 83, ../sass/lib.scss */
+.global .g-nav .flank .inner ul li { position: relative; color: white; top: 50%; /*** global g-nav a ***/ /*** global g-nav a:hover ***/ }
+/* line 89, ../sass/lib.scss */
+.global .g-nav .flank .inner ul li a { display: block; color: inherit; padding: 0 1.8rem 0 5.4rem; line-height: 3.4rem; position: relative; /*** global g-nav a span ***/ /*** global g-nav span right ***/ }
+/* line 97, ../sass/lib.scss */
+.global .g-nav .flank .inner ul li a span { font-size: 0.95em; position: absolute; left: 1.8rem; margin-top: 0.35em; width: 2rem; padding-left: 0.6rem; }
+/* line 107, ../sass/lib.scss */
+.global .g-nav .flank .inner ul li a span.right { margin-left: 0.4rem; margin-right: 0; display: none; }
+/* line 115, ../sass/lib.scss */
+.global .g-nav .flank .inner ul li a:hover { color: white; }
+/* line 124, ../sass/lib.scss */
+.global .g-nav .flank.left { left: 0; }
+@media screen and (min-width: 1024px) { /* line 124, ../sass/lib.scss */
+  .global .g-nav .flank.left { text-align: right; } }
+/* line 133, ../sass/lib.scss */
+.global .g-nav .flank.right { right: 0; }
+/* line 141, ../sass/lib.scss */
+.global .content { background: white; z-index: 1000; width: 100%; min-height: 768px; float: none; /*** global g-header ***/ /*** global largeBanner ***/ /*** global body-wrapper ***/ }
+@media screen and (min-width: 856px) { /* line 141, ../sass/lib.scss */
+  .global .content { width: 75%; float: right; position: relative; } }
+@media screen and (min-width: 1024px) { /* line 141, ../sass/lib.scss */
+  .global .content { width: 100%; float: none; } }
+/* line 159, ../sass/lib.scss */
+.global .content .g-header { background: #0E2C46; position: relative; min-height: 8.5rem; padding-left: 1.0em; height: 100%; }
+@media screen and (min-width: 1024px) { /* line 159, ../sass/lib.scss */
+  .global .content .g-header { padding: 2.0rem 0 0; } }
+/* line 172, ../sass/lib.scss */
+.global .content .large-banner { display: inline-block; width: 100%; position: relative; height: 10rem; }
+/* line 178, ../sass/lib.scss */
+.global .content .large-banner .banner-image { height: 10rem; overflow: hidden; margin: 1.0rem; position: relative; background: url(../images/placeholder.png); background-size: cover; background-repeat: no-repeat; }
+/* line 191, ../sass/lib.scss */
+.global .content .body-wrapper { /*** global body-wrapper main-icons ***/ /*** global body-wrapper main-icons listMenu ***/ }
+/* line 194, ../sass/lib.scss */
+.global .content .body-wrapper .main-icons { padding: 1.0rem; /*** global body-wrapper main-icons sets ***/ /*** global body-wrapper main-icons info ***/ }
+/* line 197, ../sass/lib.scss */
+.global .content .body-wrapper .main-icons .sets { background: #B86152; }
+/* line 202, ../sass/lib.scss */
+.global .content .body-wrapper .main-icons .info { background: #8C9943; }
+/* line 206, ../sass/lib.scss */
+.global .content .body-wrapper .main-icons ul { border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; }
+/* line 211, ../sass/lib.scss */
+.global .content .body-wrapper .main-icons ul li { color: #0E2C46; float: center; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; overflow: hidden; }
+@media screen and (min-width: 690px) { /* line 211, ../sass/lib.scss */
+  .global .content .body-wrapper .main-icons ul li { padding: 0; float: left; margin: 0; background: none !important; display: block; width: 33%; } }
+/* line 229, ../sass/lib.scss */
+.global .content .body-wrapper .main-icons ul li a { display: block; text-align: left; vertical-align: center; }
+@media screen and (max-width: 520px) { /* line 229, ../sass/lib.scss */
+  .global .content .body-wrapper .main-icons ul li a { font-size: 100%; line-height: 100%; } }
+@media screen and (min-width: 690px) { /* line 229, ../sass/lib.scss */
+  .global .content .body-wrapper .main-icons ul li a { text-align: center; font-size: 150%; line-height: 100%; text-transform: uppercase; vertical-align: center; } }
+@media screen and (max-width: 520px) { /* line 254, ../sass/lib.scss */
+  .global .content .body-wrapper .listMenu { list-style: none; margin-left: 25px; margin-bottom: 25px; } }
+
+/*** footer ***/
+/* line 268, ../sass/lib.scss */
+.footer { background: #ffff00; color: #0E2C46; z-index: 1000; bottom: 0; position: relative; height: 2rem; width: 100%; clear: both; /*** footer footer-content ***/ }

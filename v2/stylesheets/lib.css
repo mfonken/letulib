@@ -1,0 +1,115 @@
+/* Global Colors */
+/* Element Colors */
+/* Font Colors */
+/* Element sizes */
+/* Element location */
+/* Width breaklines */
+/* Height breaklines */
+/* Local */
+/* Images */
+/*** all ***/
+/* line 6, ../sass/lib.scss */
+* { box-sizing: border-box; }
+
+/* line 11, ../sass/lib.scss */
+body { background: #16161c; color: white; line-height: 1; font-family: 'Avenir LT W01 35 Light', Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; }
+
+/* line 18, ../sass/lib.scss */
+.l-header { width: 100%; height: 5rem; top: 0; position: absolute; }
+
+/*** global ***/
+/* line 26, ../sass/lib.scss */
+.global { margin: 0 auto; max-width: 150rem; position: relative; /* global size */ /*** global g-nav ***/ /*** global content ***/ }
+@media screen and (min-width: 1024px) { /* line 26, ../sass/lib.scss */
+  .global { padding: 0 16.6rem; } }
+/* line 38, ../sass/lib.scss */
+.global .g-nav { padding-bottom: 2.4rem; padding: 0; float: none; width: auto; display: none; /*** global g-nav flank ***/ /*** global g-nav flank left ***/ /*** global g-nav flank right ***/ }
+@media screen and (min-width: 856px) { /* line 38, ../sass/lib.scss */
+  .global .g-nav { display: block; float: left; width: 25%; } }
+@media screen and (min-width: 1024px) { /* line 38, ../sass/lib.scss */
+  .global .g-nav { display: block; } }
+/* line 56, ../sass/lib.scss */
+.global .g-nav .flank { top: 0; height: 100%; text-align: left; /*** global g-nav inner ***/ }
+@media screen and (min-width: 1024px) { /* line 56, ../sass/lib.scss */
+  .global .g-nav .flank { position: absolute; top: 0; width: 16.6rem; } }
+/* line 67, ../sass/lib.scss */
+.global .g-nav .flank .inner { /*** global g-nav h2 ***/ /*** global g-nav ul ***/ }
+@media screen and (min-width: 1024px) { /* line 67, ../sass/lib.scss */
+  .global .g-nav .flank .inner { position: fixed; width: 16.6rem; } }
+/* line 75, ../sass/lib.scss */
+.global .g-nav .flank .inner h2 { text-transform: uppercase; font-size: 1.0em; font-weight: 300; color: white; margin: 0 0 0.6rem; padding: 2.4rem 1.8rem 1rem; border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1); }
+/* line 86, ../sass/lib.scss */
+.global .g-nav .flank .inner ul { list-style: none; padding: 0.6rem 0; /*** global g-nav li ***/ }
+/* line 91, ../sass/lib.scss */
+.global .g-nav .flank .inner ul li { position: relative; color: white; top: 50%; /*** global g-nav a ***/ /*** global g-nav a:hover ***/ }
+/* line 97, ../sass/lib.scss */
+.global .g-nav .flank .inner ul li a { display: block; color: inherit; padding: 0 1.8rem 0 1.8rem; line-height: 3.4rem; position: relative; /*** global g-nav a span ***/ /*** global g-nav span right ***/ }
+/* line 105, ../sass/lib.scss */
+.global .g-nav .flank .inner ul li a span { font-size: 0.95em; position: absolute; left: 1.8rem; margin-top: 0.35em; width: 2rem; padding-left: 0.6rem; }
+/* line 115, ../sass/lib.scss */
+.global .g-nav .flank .inner ul li a span.right { margin-left: 0.4rem; margin-right: 0; display: none; }
+/* line 123, ../sass/lib.scss */
+.global .g-nav .flank .inner ul li a:hover { color: white; }
+/* line 132, ../sass/lib.scss */
+.global .g-nav .flank.left { left: 0; }
+@media screen and (min-width: 1024px) { /* line 132, ../sass/lib.scss */
+  .global .g-nav .flank.left { text-align: right; } }
+/* line 141, ../sass/lib.scss */
+.global .g-nav .flank.right { right: 0; }
+/* line 149, ../sass/lib.scss */
+.global .content { background: white; z-index: 10; width: 100%; min-height: 768px; float: none; /*** global g-header ***/ /*** global largeBanner ***/ /*** global body-wrapper ***/ }
+@media screen and (min-width: 856px) { /* line 149, ../sass/lib.scss */
+  .global .content { width: 75%; float: right; position: relative; } }
+@media screen and (min-width: 1024px) { /* line 149, ../sass/lib.scss */
+  .global .content { width: 100%; float: none; } }
+/* line 167, ../sass/lib.scss */
+.global .content .g-header { background: #0E2C46; position: relative; min-height: 8.5rem; height: 100%; padding: 1.0rem; text-transform: uppercase; }
+/* line 181, ../sass/lib.scss */
+.global .content .large-banner { display: inline-block; width: 100%; position: relative; height: 20rem; }
+@media screen and (min-width: 690px) { /* line 181, ../sass/lib.scss */
+  .global .content .large-banner { height: 40rem; } }
+/* line 191, ../sass/lib.scss */
+.global .content .large-banner .banner-image { height: 100%; overflow: hidden; position: relative; background: url("http://placehold.it/1280x600/aa3300/111111"); background-size: cover; background-repeat: no-repeat; }
+/* line 201, ../sass/lib.scss */
+.global .content .large-banner .search-field { display: flex; position: absolute; width: 70%; flex-direction: row; left: 15%; font-size: 0.8em; vertical-align: bottom; line-height: 1.4em; margin: -16.6666666667rem auto; }
+@media screen and (min-width: 690px) { /* line 201, ../sass/lib.scss */
+  .global .content .large-banner .search-field { margin: -33.3333333333rem auto; } }
+/* line 218, ../sass/lib.scss */
+.global .content .large-banner .search-field > input[type=search] { flex: 1; padding: 0.4em 0.4em 0.4em 0.4em; border: 0.2em solid #337ab7; }
+/* line 224, ../sass/lib.scss */
+.global .content .large-banner .search-field > button { background-color: #337ab7; color: white; border: none; padding: 0em 1.0em 0em 1.0em; }
+/* line 231, ../sass/lib.scss */
+.global .content .large-banner .search-field > button img { vertical-align: middle; }
+/* line 237, ../sass/lib.scss */
+.global .content .body-wrapper { z-index: 20; position: relative; margin: -6.6666666667rem auto; /*** global body-wrapper main-icons ***/ /*** global body-wrapper main-icons listMenu ***/ }
+@media screen and (min-width: 690px) { /* line 237, ../sass/lib.scss */
+  .global .content .body-wrapper { margin: -23.3333333333rem auto; background: none; position: absolute; } }
+/* line 249, ../sass/lib.scss */
+.global .content .body-wrapper .main-icons { padding: 1.0rem; /*** global body-wrapper main-icons sets ***/ /*** global body-wrapper main-icons info ***/ }
+@media screen and (max-width: 690px) { /* line 255, ../sass/lib.scss */
+  .global .content .body-wrapper .main-icons .sets li { border: 0.5rem solid #B86152; box-shadow: -5px 7px black; } }
+@media screen and (max-width: 690px) { /* line 266, ../sass/lib.scss */
+  .global .content .body-wrapper .main-icons .info li { border: 0.5rem solid #8C9943; box-shadow: -5px 7px black; } }
+/* line 276, ../sass/lib.scss */
+.global .content .body-wrapper .main-icons ul { justify-content: center; text-align: center; margin-bottom: 3.0rem; border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; }
+@media screen and (min-width: 690px) { /* line 276, ../sass/lib.scss */
+  .global .content .body-wrapper .main-icons ul { display: flex; } }
+/* line 289, ../sass/lib.scss */
+.global .content .body-wrapper .main-icons ul li { margin: 1.0rem; color: #0E2C46; float: center; height: 5rem; line-height: 4rem; text-align: left; padding-left: 0.5rem; /* Effects */ overflow: hidden; }
+@media screen and (min-width: 690px) { /* line 289, ../sass/lib.scss */
+  .global .content .body-wrapper .main-icons ul li { padding: 0; float: left; margin: 0; background: none !important; display: block; width: 33%; } }
+/* line 315, ../sass/lib.scss */
+.global .content .body-wrapper .main-icons ul li a { display: block; text-align: left; vertical-align: center; }
+@media screen and (max-width: 520px) { /* line 315, ../sass/lib.scss */
+  .global .content .body-wrapper .main-icons ul li a { font-size: 100%; line-height: 100%; } }
+@media screen and (min-width: 690px) { /* line 315, ../sass/lib.scss */
+  .global .content .body-wrapper .main-icons ul li a { text-align: center; font-size: 150%; line-height: 100%; text-transform: uppercase; vertical-align: center; } }
+@media screen and (max-width: 520px) { /* line 341, ../sass/lib.scss */
+  .global .content .body-wrapper .listMenu ul { list-style: none; margin-left: 25px; margin-bottom: 25px; } }
+
+/*** footer ***/
+/* line 354, ../sass/lib.scss */
+.g-footer { visibility: hidden; background: #ffff00; color: #0E2C46; z-index: 1000; bottom: 0; position: relative; height: 5rem; width: 100%; clear: both; /*** footer footer-content ***/ }
+
+/* line 373, ../sass/lib.scss */
+.l-footer { width: 100%; height: 100%; top: 0; position: absolute; }
