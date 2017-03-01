@@ -19,7 +19,7 @@ body { background: #16161c; color: white; line-height: 1; font-family: 'Avenir L
 
 /*** global ***/
 /* line 26, ../sass/lib.scss */
-.global { margin: 0 auto; max-width: 150rem; position: relative; /* global size */ /*** global g-nav ***/ /*** global content ***/ }
+.global { margin: 0 auto; max-width: 150rem; position: relative; height: 100%; /* global size */ /*** global g-nav ***/ /*** global content ***/ }
 @media screen and (min-width: 1024px) { /* line 26, ../sass/lib.scss */
   .global { padding: 0 16.6rem; } }
 /* line 38, ../sass/lib.scss */
@@ -65,15 +65,15 @@ body { background: #16161c; color: white; line-height: 1; font-family: 'Avenir L
 /* line 167, ../sass/lib.scss */
 .global .content .g-header { background: #0E2C46; position: relative; min-height: 8.5rem; height: 100%; padding: 1.0rem; text-transform: uppercase; }
 /* line 181, ../sass/lib.scss */
-.global .content .large-banner { display: inline-block; width: 100%; position: relative; height: 20rem; }
+.global .content .large-banner { display: inline-block; width: 100%; position: relative; height: 15rem; }
 @media screen and (min-width: 690px) { /* line 181, ../sass/lib.scss */
-  .global .content .large-banner { height: 40rem; } }
+  .global .content .large-banner { height: 30rem; } }
 /* line 191, ../sass/lib.scss */
 .global .content .large-banner .banner-image { height: 100%; overflow: hidden; position: relative; background: url("http://placehold.it/1280x600/aa3300/111111"); background-size: cover; background-repeat: no-repeat; }
 /* line 201, ../sass/lib.scss */
-.global .content .large-banner .search-field { display: flex; position: absolute; width: 70%; flex-direction: row; left: 15%; font-size: 0.8em; vertical-align: bottom; line-height: 1.4em; margin: -16.6666666667rem auto; }
+.global .content .large-banner .search-field { display: flex; position: absolute; width: 70%; flex-direction: row; left: 15%; font-size: 0.8em; vertical-align: bottom; line-height: 1.4em; margin: -9.5rem auto; }
 @media screen and (min-width: 690px) { /* line 201, ../sass/lib.scss */
-  .global .content .large-banner .search-field { margin: -33.3333333333rem auto; } }
+  .global .content .large-banner .search-field { margin: -25rem auto; } }
 /* line 218, ../sass/lib.scss */
 .global .content .large-banner .search-field > input[type=search] { flex: 1; padding: 0.4em 0.4em 0.4em 0.4em; border: 0.2em solid #337ab7; }
 /* line 224, ../sass/lib.scss */
@@ -81,9 +81,9 @@ body { background: #16161c; color: white; line-height: 1; font-family: 'Avenir L
 /* line 231, ../sass/lib.scss */
 .global .content .large-banner .search-field > button img { vertical-align: middle; }
 /* line 237, ../sass/lib.scss */
-.global .content .body-wrapper { z-index: 20; position: relative; margin: -6.6666666667rem auto; /*** global body-wrapper main-icons ***/ /*** global body-wrapper main-icons listMenu ***/ }
+.global .content .body-wrapper { z-index: 20; position: relative; margin: 0.5rem auto; /*** global body-wrapper main-icons ***/ /*** global body-wrapper main-icons listMenu ***/ }
 @media screen and (min-width: 690px) { /* line 237, ../sass/lib.scss */
-  .global .content .body-wrapper { margin: -23.3333333333rem auto; background: none; position: absolute; } }
+  .global .content .body-wrapper { margin: -15rem auto; background: none; position: absolute; } }
 /* line 249, ../sass/lib.scss */
 .global .content .body-wrapper .main-icons { padding: 1.0rem; /*** global body-wrapper main-icons sets ***/ /*** global body-wrapper main-icons info ***/ }
 @media screen and (max-width: 690px) { /* line 255, ../sass/lib.scss */
@@ -105,7 +105,7 @@ body { background: #16161c; color: white; line-height: 1; font-family: 'Avenir L
 @media screen and (min-width: 690px) { /* line 315, ../sass/lib.scss */
   .global .content .body-wrapper .main-icons ul li a { text-align: center; font-size: 150%; line-height: 100%; text-transform: uppercase; vertical-align: center; } }
 @media screen and (max-width: 520px) { /* line 341, ../sass/lib.scss */
-  .global .content .body-wrapper .listMenu ul { list-style: none; margin-left: 25px; margin-bottom: 25px; } }
+  .global .content .body-wrapper .list-menu ul { list-style: none; margin-left: 25px; margin-bottom: 25px; } }
 
 /*** footer ***/
 /* line 354, ../sass/lib.scss */

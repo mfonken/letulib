@@ -28,7 +28,7 @@ body {
   margin: 0 auto;
   max-width: 150rem;
   position: relative;
-
+  height: 100%;
   /* global size */
   @media screen and (min-width: $break-desktop-s) {
     padding: 0 $flank-menu-width;
@@ -337,7 +337,7 @@ body {
       }
 
       /*** global body-wrapper main-icons listMenu ***/
-      .listMenu {
+      .list-menu {
         ul {
         @media screen and (max-width: $break-mobile-s) {
           list-style: none;
