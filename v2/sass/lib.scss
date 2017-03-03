@@ -24,12 +24,14 @@ body {
 
 /*** global ***/
 .global {
-  // padding-bottom: $footer-height;
   margin: 0 auto;
-  max-width: 150rem;
-  position: relative;
+  position: absolute;
+  width: 100%;
   height: 100%;
   /* global size */
+  @media screen and (max-width: $break-mobile-l) {
+    margin-top: -$header-height;
+  }
   @media screen and (min-width: $break-desktop-s) {
     padding: 0 $flank-menu-width;
   }
@@ -97,25 +99,16 @@ body {
             a {
               display: block;
               color:inherit;
-              padding: 0 1.8rem 0 1.8rem;
-              line-height: 3.4rem;
+              padding: 0 4.4rem 0 4.4rem;
+              line-height: 4.0rem;
               position: relative;
 
               /*** global g-nav a span ***/
               span {
-                font-size: 0.95em;
+                margin-top: 1.2rem;
                 position: absolute;
-                left: 1.8rem;
-                margin-top: 0.35em;
-                width: 2rem;
-                padding-left: 0.6rem;
-              }
-
-              /*** global g-nav span right ***/
-              span.right {
-                margin-left: 0.4rem;
-                margin-right: 0;
-                display: none;
+                left: 1.6rem;
+                right: auto;
               }
             }
 
@@ -130,17 +123,24 @@ body {
 
     /*** global g-nav flank left ***/
     .flank.left {
-      // background: #0000ff;
       left: 0;
-      @media screen and (min-width: $break-desktop-s) {
-        text-align: right;
+      a {
+        @media screen and (min-width: $break-desktop-s) {
+          text-align: right;
+        }
+      }
+      span {
+        @media screen and (min-width: $break-desktop-s) {
+          left: auto !important;
+          right: 1.6rem !important;
+        }
       }
     }
 
     /*** global g-nav flank right ***/
     .flank.right {
-      // background: #ff0000;
       right: 0;
+
 
     }
   }
@@ -209,10 +209,17 @@ body {
         vertical-align: bottom;
         line-height: 1.4em;
 
+        border: $search-field-border-width solid $search-field-light-color;
+        box-shadow: -5px 7px $search-field-dark-color;
+
         margin: $search-field-y-mobile auto;
         @media screen and (min-width: $break-mobile-m) {
           margin: $search-field-y-desktop auto;
         }
+      }
+      .search-field>input:focus {
+        outline:none;
+        color: $search-field-dark-color;
       }
 
       .search-field>input[type=search] {
@@ -236,7 +243,8 @@ body {
     /*** global body-wrapper ***/
     .body-wrapper {
       z-index: 20;
-      position:relative;
+      position: relative;
+      width: 100%;
 
       margin: $icons-y-mobile auto;
       @media screen and (min-width: $break-mobile-m) {
@@ -247,29 +255,20 @@ body {
 
       /*** global body-wrapper main-icons ***/
       .main-icons {
-
         padding: 1.0rem;
-
+        margin-left: -4rem;
         /*** global body-wrapper main-icons sets ***/
         .sets {
           li {
-            @media screen and (max-width: $break-mobile-m) {
-              border: $icons-border-width solid $icons-sets-light-color;
-              box-shadow: -5px 7px $icons-sets-dark-color;
-            }
-            @media screen and (min-width: $break-mobile-m) {
-            }
+            border: $icons-border-width solid $icons-sets-light-color;
+            box-shadow: -5px 7px $icons-sets-dark-color;
           }
         }
         /*** global body-wrapper main-icons info ***/
         .info {
           li {
-            @media screen and (max-width: $break-mobile-m) {
-              border: $icons-border-width solid $icons-info-light-color;
-              box-shadow: -5px 7px $icons-info-dark-color;
-            }
-            @media screen and (min-width: $break-mobile-m) {
-            }
+            border: $icons-border-width solid $icons-info-light-color;
+            box-shadow: -5px 7px $icons-info-dark-color;
           }
         }
 
@@ -283,12 +282,15 @@ body {
           -webkit-border-radius: 20px;
 
           @media screen and (min-width: $break-mobile-m) {
+            margin-bottom: 0;
             display: flex;
+            background: none !important;
           }
 
           li {
-            margin: 1.0rem;
+            margin: $icons-padding-mobile;
             color: $global-font-color-dark;
+            background: white;
             float: center;
 
             height: $icons-height;
@@ -304,10 +306,10 @@ body {
             overflow:hidden;
 
             @media screen and (min-width: $break-mobile-m) {
-              padding: 0;
+              // padding: 0;
               float: left;
-              margin: 0;
-              background: none !important;
+              margin: $icons-padding-desktop;
+
               display: block;
               width: 33%;
             }
@@ -338,12 +340,20 @@ body {
 
       /*** global body-wrapper main-icons listMenu ***/
       .list-menu {
-        ul {
-        @media screen and (max-width: $break-mobile-s) {
-          list-style: none;
-          margin-left: 25px;
-          margin-bottom: 25px;
+        color: #aabbcc;
+        width: 95%;
+        position: absolute;
+        //top: $banner-height-mobile - $header-height;
+
+        @media screen and (min-width: $break-mobile-m) {
+          top: $banner-height-desktop - $header-height - 5rem;
         }
+        ul {
+          @media screen and (max-width: $break-mobile-s) {
+            list-style: none;
+            margin-left: 25px;
+            margin-bottom: 25px;
+          }
         }
       }
     }

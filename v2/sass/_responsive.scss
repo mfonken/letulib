@@ -1,18 +1,25 @@
 /* Element sizes */
+$universal-border-width:      0.5rem;
+
 $flank-menu-width:            16.6rem;
 $header-height:               5rem;
 $banner-height-mobile:        15rem;
-$banner-height-desktop:       30rem;
+$banner-height-desktop:       35rem;
 $icons-height:                5rem;
-$icons-border-width:          0.5rem;
+$icons-border-width:          $universal-border-width;
 $footer-height:               $header-height;
 
+$search-field-border-width:   $universal-border-width;
 
 /* Element location */
 $search-field-y-mobile:       -( $banner-height-mobile / 2 ) - 2rem;
 $search-field-y-desktop:      -( $banner-height-desktop * ( 5 / 6 ) );
 $icons-y-mobile:              $search-field-y-mobile + 10rem;
-$icons-y-desktop:             $search-field-y-desktop + 10rem;
+$icons-y-desktop:             $search-field-y-desktop + 5rem;
+
+/* Element attributes */
+$icons-padding-mobile:        1rem;
+$icons-padding-desktop:       2rem;
 
 /* Width breaklines */
 $break-mobile-xs:             320px;
