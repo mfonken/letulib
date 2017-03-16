@@ -29,9 +29,13 @@ body {
   width: 100%;
   height: 100%;
   /* global size */
-  @media screen and (max-width: $break-mobile-l) {
+  @media screen and (max-width: $break-mobile-m) {
     margin-top: -$header-height;
   }
+  // @media screen and (min-width: $break-mobile-m) and (max-width: $break-mobile-l) {
+  //   margin-top: $header-height/2;
+  // }
+
   @media screen and (min-width: $break-desktop-s) {
     padding: 0 $flank-menu-width;
   }
@@ -166,26 +170,47 @@ body {
     /*** global g-header ***/
     .g-header {
       background: $dark-letu-blue;
-      position: relative;
+      width: 100%;
       min-height: 8.5rem;
       height: 100%;
       padding: 1.0rem;
       text-transform: uppercase;
 
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+
       @media screen and (min-width: $break-desktop-s) {
         // padding: 2.0rem 0 0;
+      }
+
+      .g-title {
+        color: #ff0000;
+      }
+      .g-displays {
+        float: right;
+        clear: right;
+
+        .g-message-display {
+          color: #aaaa00;
+        }
+
+        .g-hours-display {
+          color: #00ff00;
+        }
       }
     }
 
     /*** global largeBanner ***/
     .large-banner {
+
       display: inline-block;
       width: 100%;
       position: relative;
       height: $banner-height-mobile;
 
       @media screen and (min-width: $break-mobile-m) {
-        height: $banner-height-desktop;
+        height: $banner-height-desktop + $header-height;
       }
 
       .banner-image {
@@ -245,7 +270,7 @@ body {
       z-index: 20;
       position: relative;
       width: 100%;
-
+      padding: 0;
       margin: $icons-y-mobile auto;
       @media screen and (min-width: $break-mobile-m) {
         margin: $icons-y-desktop auto;
@@ -256,7 +281,8 @@ body {
       /*** global body-wrapper main-icons ***/
       .main-icons {
         padding: 1.0rem;
-        margin-left: -4rem;
+        margin-left: -4rem; // main-icons centering
+
         /*** global body-wrapper main-icons sets ***/
         .sets {
           li {
@@ -306,7 +332,6 @@ body {
             overflow:hidden;
 
             @media screen and (min-width: $break-mobile-m) {
-              // padding: 0;
               float: left;
               margin: $icons-padding-desktop;
 
@@ -339,20 +364,40 @@ body {
       }
 
       /*** global body-wrapper main-icons listMenu ***/
-      .list-menu {
-        color: #aabbcc;
-        width: 95%;
-        position: absolute;
-        //top: $banner-height-mobile - $header-height;
+      .page.container {
+        height: 100%;
+        color: black;
+        position: relative;
 
+        top: $page-content-y-mobile;
         @media screen and (min-width: $break-mobile-m) {
-          top: $banner-height-desktop - $header-height - 5rem;
+          top: $page-content-y-desktop;
         }
-        ul {
-          @media screen and (max-width: $break-mobile-s) {
-            list-style: none;
-            margin-left: 25px;
-            margin-bottom: 25px;
+
+        .page.content {
+          background: none;
+          float: none;
+          margin: 0;
+          padding: 1rem;
+          width: 100%;
+          .page.header {
+            // margin: 1rem;
+          }
+          .page.menu {
+            width: 100%;
+            display: inline-flex;
+
+            .page.column {
+              width: 50%;
+            }
+            ul {
+
+              // @media screen and (max-width: $break-mobile-s) {
+              //   list-style: none;
+              //   margin-left: 25px;
+              //   margin-bottom: 25px;
+              // }
+            }
           }
         }
       }
@@ -385,4 +430,8 @@ body {
   height: 100%;
   top: 0;
   position: absolute;
+}
+
+.vertical-line {
+  border-left: 1px solid #eee;
 }
