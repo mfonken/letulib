@@ -1,0 +1,50 @@
+/* Global Colors */
+/* Element Colors */
+/* Font Colors */
+/*** all ***/
+/* line 4, ../sass/hoursappletstyle.scss */
+* { box-sizing: border-box; }
+
+/* line 8, ../sass/hoursappletstyle.scss */
+body { padding: 1rem; background: white; color: white; line-height: 1; font-family: 'Avenir LT W01 35 Light', Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; color: black; }
+
+/* line 19, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content h3 { margin: 0; margin-bottom: 1rem; }
+/* line 23, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-separator-line { display: block; height: 1px; border: 0; border-top: 2px solid #000; padding: 0; }
+/* line 32, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body { width: 50%; border: 2px solid black; list-style: none; display: flex; flex-direction: column; padding: 2rem; }
+/* line 40, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .default-hours-editor { float: left; padding-left: 0; }
+/* line 44, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .default-hours-editor .default-hours-list { width: 80%; padding-right: 0; margin-right: 0; }
+/* line 48, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .default-hours-editor .default-hours-list li { width: 100%; display: inline-block; padding-top: 1rem; padding-left: 3rem; float: left; left: 20%; }
+/* line 57, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .default-hours-editor .default-hours-list li div { width: 100%; display: inherit; }
+/* line 61, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .default-hours-editor .default-hours-list li div h4 { padding-top: 0.2rem; padding-right: 3rem; margin: 0; width: 30%; float: left; text-align: right; }
+/* line 69, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .default-hours-editor .default-hours-list li div input { width: 7rem; }
+/* line 73, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .default-hours-editor .default-hours-list li div .add-schedule-pair { font-size: 2rem; color: black; padding-right: 0.4rem; padding-left: 20rem; float: right; }
+/* line 82, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .default-hours-editor .default-hours-list li .time-picker-end { margin-left: 1.0rem; }
+/* line 89, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .unique-hours-editor .unique-hours-list { float: left; padding-left: 0; }
+/* line 93, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .unique-hours-editor .unique-hours-list li { float: left; display: table-row; counter-increment: table-ol; padding-top: 1rem; }
+/* line 100, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .unique-hours-editor .unique-hours-list li div { width: 100%; }
+/* line 103, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .unique-hours-editor .unique-hours-list li div input { width: 10rem; margin-left: 1.0rem; }
+/* line 108, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .unique-hours-editor .unique-hours-list li div .unique-hours-remove { margin-left: 1.0rem; color: black; }
+/* line 115, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .unique-hours-editor .unique-hours-list .event-name { width: 20rem; color: black; }
+/* line 120, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .unique-hours-editor .unique-hours-add { font-size: 2rem; color: black; padding-left: 0.4rem; padding-right: 20rem; float: left; }
+/* line 128, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-applet-body .unique-hours-editor .unique-hours-undo { font-size: 2rem; color: black; padding-right: 0.4rem; padding-left: 20rem; float: right; }
+/* line 138, ../sass/hoursappletstyle.scss */
+.hours-applet-wrapper .hours-applet-content .hours-list-apply-button { position: relative; background-color: white; color: black; width: 5rem; font-size: 0.8em; vertical-align: bottom; line-height: 1.4em; border: 2px solid black; box-shadow: -5px 7px black; margin-left: auto; margin-right: 0; }

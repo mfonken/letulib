@@ -1,0 +1,159 @@
+@import 'palette';
+
+/*** all ***/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+  background: $content-background-color;
+  color: $global-font-color-light;
+  line-height: 1;
+  font-family: 'Avenir LT W01 35 Light', Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+  color: black;
+}
+
+.hours-applet-wrapper {
+  .hours-applet-content {
+    h3 {
+      margin: 0;
+      margin-bottom: 1rem;
+    }
+    .hours-applet-separator-line {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 2px solid #000;
+      padding: 0;
+    }
+
+
+    .hours-applet-body {
+      width: 50%;
+      border: 2px solid black;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+
+      .default-hours-editor {
+        float: left;
+        padding-left: 0;
+
+        .default-hours-list {
+          width: 80%;
+          padding-right: 0;
+          margin-right: 0;
+          li {
+            width: 100%;
+
+            display: inline-block;
+            padding-top: 1rem;
+            padding-left:3rem;
+            float:left;
+
+            div {
+              width: 100%;
+              display: inherit;
+
+              h4 {
+                padding-top:0.2rem;
+                padding-right:3rem;
+                margin: 0;
+                width: 30%;
+                float: left;
+                text-align: right;
+              }
+              input {
+                width: 7rem;
+              }
+
+              .add-schedule-pair {
+                font-size: 2rem;
+                color: black;
+                padding-right: 0.4rem;
+
+                padding-left: 20rem;
+                float: right;
+              }
+            }
+            .time-picker-end {
+              margin-left: 1.0rem;
+            }
+          }
+        }
+      }
+      .unique-hours-editor {
+        .unique-hours-list {
+          float: left;
+          padding-left: 0;
+
+          li {
+            float: left;
+            display: table-row;
+            counter-increment: table-ol;
+
+            padding-top: 1rem;
+
+            div {
+              width: 100%;
+
+              input {
+                width: 10rem;
+                margin-left: 1.0rem;
+              }
+
+              .unique-hours-remove {
+                margin-left: 1.0rem;
+                color: black;
+              }
+            }
+          }
+
+          .event-name {
+            width: 20rem;
+            color: black;
+          }
+        }
+        .unique-hours-add {
+          font-size: 2rem;
+          color: black;
+          padding-left: 0.4rem;
+
+          padding-right: 20rem;
+          float: left;
+        }
+        .unique-hours-undo {
+          font-size: 2rem;
+          color: black;
+          padding-right: 0.4rem;
+
+          padding-left: 20rem;
+          float: right;
+        }
+      }
+    }
+    .hours-list-apply-button {
+      position:relative;
+      // float: right;
+
+      background-color: white;
+      color: black;
+
+      width:5rem;
+      font-size: 0.8em;
+      vertical-align: bottom;
+      line-height: 1.4em;
+
+      border: 2px solid black;
+      box-shadow: -5px 7px black;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .hours-applet-footer {
+
+    }
+  }
+}

@@ -74,7 +74,7 @@ body { background: #16161c; color: white; line-height: 1; font-family: 'Avenir L
 /* line 194, ../sass/lib.scss */
 .global .content .g-header .g-displays .g-message-display { color: #aaaa00; }
 /* line 198, ../sass/lib.scss */
-.global .content .g-header .g-displays .g-hours-display { color: #00ff00; }
+.global .content .g-header .g-displays .g-hours-display { color: #337ab7; }
 /* line 205, ../sass/lib.scss */
 .global .content .large-banner { display: inline-block; width: 100%; position: relative; height: 15rem; }
 @media screen and (min-width: 767px) { /* line 205, ../sass/lib.scss */

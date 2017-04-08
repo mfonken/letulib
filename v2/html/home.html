@@ -10,26 +10,10 @@
   <link href="http://www.letu.edu/opencms/export/system/modules/edu.letu.templates.main/resources/css/letu-resp4.css" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="../stylesheets/lib.css"/>
 
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script>
-  $(document).ready(function() {
-    $(".hours-return1").text("$3");
-    $.get( "http://localhost:8080/DynamicServlet/rest/HoursService/getHours", function( data ) {
-      alert( "Data Loaded: " + data );
-      $(".hours-return2").text(data);
-    });
-  });
-  </script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="../javascript/servlethandler.js"></script>
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-       <script type="text/javascript">
-         $(document).ready(function(){
-           $.get( "http://localhost:8080/DynamicServlet/rest/HoursService/getHours", function( data ) {
-             alert( "Data Loaded: " + data );
-           });
-          //  alert("Hi welcome to Jquery ");
-         });
-   </script>
 </head>
 
 <body>
@@ -45,9 +29,9 @@
             <h2>Left Menu</h2>
             <ul class="menu">
               <li>
-                <a href="#">
-                  <span class="fa fa-search"></span>
-                  Icon 1.
+                <a href="hoursapplet.html">
+                  <span class="fa fa-clock-o"></span>
+                  Hours
                 </a>
               </li>
               <li>
@@ -79,7 +63,7 @@
             <ul class="menu">
               <li>
                 <a href="#">
-                  <span class="fa fa-clock-o"></span>
+                  <span class="fa fa-search"></span>
                   Icon 1.
                 </a>
               </li>
@@ -112,18 +96,12 @@
         </div>
         <div class="g-displays">
           <div class="g-hours-display">
-
-            <span class="hours-return1">
-              #1
-            </span>
-            <span class="hours-return2">
-              <a href="#" onclick="javascript:getContent('http://localhost:8080/DynamicServlet/rest/HoursService/getHours')">
-                #2
-              </a>
+            <span class="hours-display">
+              "Hours load here"
             </span>
           </div>
           <div class="g-message-display">
-            Events today: ~~~~~~~.
+              <!-- <button onclick="msg()">Click me</button>  -->
           </div>
         </div>
       </div>
