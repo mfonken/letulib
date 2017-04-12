@@ -1,0 +1,39 @@
+/* Element sizes */
+$universal-border-width:      0.5rem;
+
+$flank-menu-width:            16.6rem;
+$header-height:               5rem;
+$banner-height-mobile:        15rem;
+$banner-height-desktop:       28rem;
+$icons-height:                5rem;
+
+$footer-height:               $header-height;
+
+
+
+/* Element location */
+$search-field-y-mobile:       -( $banner-height-mobile / 2 ) - 2rem;
+$search-field-y-desktop:      -( $banner-height-desktop );
+$icons-y-mobile:              $search-field-y-mobile + 10rem;
+$icons-y-desktop:             $search-field-y-desktop + 5rem;
+$page-content-y-mobile:       0rem;
+$page-content-y-desktop:      5rem;
+
+/* Element attributes */
+$icons-padding-mobile:        1rem;
+$icons-padding-desktop:       2rem;
+$icons-border-width:          $universal-border-width;
+$search-field-border-width:   $universal-border-width;
+
+/* Width breaklines */
+$break-mobile-xs:             320px;
+$break-mobile-s:              520px;
+$break-mobile-m:              767px;
+$break-mobile-l:              856px;
+$break-desktop-s:             1024px;
+$break-desktop-m:             1400px;
+$break-desktop-l:             1720px;
+$break-desktop-xl:            2000px;
+
+/* Height breaklines */
+$break-mobile-m-height:       768px;

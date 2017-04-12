@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <!-- <script src="https://www.w3schools.com/lib/w3data.js"></script>
+  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/8367295a-8a74-4d74-94fe-c13dd86b04dd.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="http://www.letu.edu/opencms/export/system/modules/edu.letu.templates.main/resources/fontawesome-300/css/font-awesome.css" rel="stylesheet">
+  <link href="http://www.letu.edu/opencms/export/system/modules/edu.letu.templates.main/resources/css/letu-resp4.css" rel="stylesheet"> -->
+
+<!-- TEST SOURCES START (Matthew Fonken)-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="http://www.matthewfonken.com/letulib/v3/stylesheets/hoursappletstyle.css"/>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="http://www.matthewfonken.com/letulib/v3/stylesheets/jquery.timepicker.css" rel="stylesheet"/>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="http://www.matthewfonken.com/letulib/v3/javascript/applethandler.js"></script>
+  <script src="http://www.matthewfonken.com/letulib/v3/javascript/jquery.timepicker.min.js"></script>
+<!-- TEST SOURCES END -->
+
+</head>
+<body>
+
+  <div class="hours-applet-wrapper">
+    <div class="hours-applet-content">
+      <div class="hours-applet-header">
+        <h2>
+          Library Hours Manager
+        </h2>
+      </div>
+      <div class="hours-applet-body">
+        <div class="default-hours-editor">
+          <h3>
+            Default Hours
+          </h3>
+          <ul class="default-hours-list">
+          </ul>
+        </div>
+        <hr class="hours-applet-separator-line"/>
+        <div class="unique-hours-editor">
+          <h3>
+            Special Hours
+          </h3>
+          <ul class="unique-hours-list">
+          </ul>
+          <a href="#" class="unique-hours-add" onclick="return addUniqueHourUI()">
+            <span class="fa fa-calendar-plus-o"></span>
+          </a>
+          <a href="#" class="unique-hours-undo" onclick="return putBackUniqueHourUI()">
+            <span class="fa fa-undo"></span>
+          </a>
+        </div>
+        <hr class="hours-applet-separator-line"/>
+        <button class="hours-list-apply-button" onclick="return postAllDefaultHours(this);" type="submit" form="default-hours-editor" value="Submit">Apply</button>
+      </div>
+    </div>
+    <div class="hours-applet-footer">
+    </div>
+
+  </div>
+
+<body>
