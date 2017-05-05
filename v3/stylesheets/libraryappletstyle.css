@@ -1,0 +1,65 @@
+/* Global Colors */
+/* Element Colors */
+/* Font Colors */
+/* line 3, ../sass/libraryappletstyle.scss */
+* { box-sizing: border-box; }
+
+/* line 7, ../sass/libraryappletstyle.scss */
+body { padding: 1rem; background: white; color: white; line-height: 1; font-family: 'Avenir LT W01 35 Light', Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; color: black; }
+
+/* line 18, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content h3 { margin: 0; margin-bottom: 1rem; }
+/* line 22, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-separator-line { display: block; height: 1px; border: 0; border-top: 2px solid #000; padding: 0; }
+/* line 31, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body { width: 50%; border: 2px solid black; list-style: none; display: flex; flex-direction: column; padding: 2rem; }
+/* line 39, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .live-message-editor { float: left; padding-left: 0; }
+/* line 47, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .live-message-editor .message-input-div { width: 100%; display: inline; }
+/* line 50, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .live-message-editor .message-input-div .message-input-span { float: left; width: 80%; }
+/* line 53, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .live-message-editor .message-input-div .message-input-span .message-input { width: 75%; overflow-x: scroll; padding-right: 0.6rem; height: 2.8rem; }
+/* line 61, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .live-message-editor .message-input-div .color-input-span { float: left; width: 13%; }
+/* line 64, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .live-message-editor .message-input-div .color-input-span .color-input { float: right; }
+/* line 71, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .default-hours-editor { float: left; padding-left: 0; }
+/* line 75, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .default-hours-editor .default-hours-list { width: 80%; padding-right: 0; margin-right: 0; }
+/* line 79, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .default-hours-editor .default-hours-list li { width: 100%; display: inline-block; padding-top: 1rem; padding-left: 3rem; float: left; }
+/* line 87, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .default-hours-editor .default-hours-list li div { width: 100%; display: inherit; }
+/* line 91, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .default-hours-editor .default-hours-list li div h4 { padding-top: 0.2rem; padding-right: 3rem; margin: 0; width: 30%; float: left; text-align: right; }
+/* line 99, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .default-hours-editor .default-hours-list li div input { width: 7rem; }
+/* line 103, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .default-hours-editor .default-hours-list li div .add-schedule-pair { font-size: 2rem; color: black; padding-right: 0.4rem; padding-left: 20rem; float: right; }
+/* line 112, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .default-hours-editor .default-hours-list li .time-picker-end { margin-left: 1.0rem; }
+/* line 119, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .unique-hours-editor .unique-hours-list { float: left; padding-left: 0; }
+/* line 123, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .unique-hours-editor .unique-hours-list li { float: left; display: table-row; counter-increment: table-ol; padding-top: 1rem; }
+/* line 130, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .unique-hours-editor .unique-hours-list li div { width: 100%; }
+/* line 133, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .unique-hours-editor .unique-hours-list li div input { width: 10rem; margin-left: 1.0rem; }
+/* line 138, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .unique-hours-editor .unique-hours-list li div .unique-hours-remove { margin-left: 1.0rem; color: black; }
+/* line 145, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .unique-hours-editor .unique-hours-list .event-name { width: 20rem; color: black; }
+/* line 150, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .unique-hours-editor .unique-hours-add { font-size: 2rem; color: black; padding-left: 0.4rem; padding-right: 20rem; float: left; }
+/* line 158, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .unique-hours-editor .unique-hours-undo { font-size: 2rem; color: black; padding-right: 0.4rem; padding-left: 20rem; float: right; }
+/* line 168, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .library-applet-footer { display: inline; }
+/* line 170, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .library-applet-footer .library-applet-info-button { font-size: 2.2rem; color: black; float: left; }
+/* line 175, ../sass/libraryappletstyle.scss */
+.library-applet-wrapper .library-applet-content .library-applet-body .library-applet-footer .library-applet-apply-button { float: right; position: relative; background-color: white; color: black; width: 5rem; font-size: 0.8em; vertical-align: bottom; line-height: 1.4em; border: 2px solid black; box-shadow: -5px 7px black; margin-left: auto; margin-right: 0; }

@@ -1,28 +1,30 @@
 /* Element sizes */
 $universal-border-width:      0.5rem;
 
-$flank-menu-width:            16.6rem;
-$header-height:               5rem;
+$flank-menu-width:            23rem;
+$g-header-height:             8.6rem;
+$l-header-height:             50px;
 $banner-height-mobile:        15rem;
 $banner-height-desktop:       28rem;
 $icons-height:                5rem;
 
-$footer-height:               $header-height;
-
-
+$g-footer-height:             $g-header-height;
+$l-footer-height:             100px;
 
 /* Element location */
 $search-field-y-mobile:       -( $banner-height-mobile / 2 ) - 2rem;
-$search-field-y-desktop:      -( $banner-height-desktop );
+$search-field-y-desktop:      -( $banner-height-desktop ) - 2rem;
 $icons-y-mobile:              $search-field-y-mobile + 10rem;
-$icons-y-desktop:             $search-field-y-desktop + 5rem;
+$icons-y-desktop:             $search-field-y-desktop + 8rem;
 $page-content-y-mobile:       0rem;
-$page-content-y-desktop:      5rem;
+$page-content-y-desktop:      23rem;
+$page-content-outer-padding:  5rem;
 
 /* Element attributes */
 $icons-padding-mobile:        1rem;
 $icons-padding-desktop:       2rem;
 $icons-border-width:          $universal-border-width;
+$page-list-line-height:       2.4rem;
 $search-field-border-width:   $universal-border-width;
 
 /* Width breaklines */
@@ -37,3 +39,5 @@ $break-desktop-xl:            2000px;
 
 /* Height breaklines */
 $break-mobile-m-height:       768px;
+$break-desktop-m-height:      768px;
+$break-mobile-max-height:     2000px;

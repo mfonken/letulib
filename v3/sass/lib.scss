@@ -5,6 +5,7 @@
 /*** all ***/
 * {
   box-sizing: border-box;
+  max-height: $break-mobile-m-height;
   // background: $body-background-color;
 }
 
@@ -13,11 +14,12 @@ body {
   color: $global-font-color-light;
   line-height: 1;
   font-family: 'Avenir LT W01 35 Light', Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+  position: relative;
 }
 
 .l-header {
   width: 100%;
-  height: $header-height;
+  height: $l-header-height;
   top: 0;
   position: absolute;
 }
@@ -30,7 +32,7 @@ body {
   height: 100%;
   /* global size */
   @media screen and (max-width: $break-mobile-m) {
-    margin-top: -$header-height;
+    margin-top: -$l-header-height;
   }
   // @media screen and (min-width: $break-mobile-m) and (max-width: $break-mobile-l) {
   //   margin-top: $header-height/2;
@@ -63,6 +65,8 @@ body {
       top: 0;
       height: 100%;
       text-align: left;
+      z-index: 1000;
+
       @media screen and (min-width: $break-desktop-s) {
         position: absolute;
         top: 0;
@@ -91,13 +95,15 @@ body {
         /*** global g-nav ul ***/
         ul {
           list-style: none;
+
           padding: 0.6rem 0;
 
           /*** global g-nav li ***/
           li {
             position: relative;
             color: $menu-font-color-light;
-            top: 50%;
+            top: 100%;
+
 
             /*** global g-nav a ***/
             a {
@@ -113,12 +119,13 @@ body {
                 position: absolute;
                 left: 1.6rem;
                 right: auto;
+                line-height: 100%;
               }
             }
 
             /*** global g-nav a:hover ***/
             a:hover {
-              color: hsl(0, 0%, 100%);
+              color: $menu-font-color-hover;
             }
           }
         }
@@ -128,6 +135,9 @@ body {
     /*** global g-nav flank left ***/
     .flank.left {
       left: 0;
+      @media screen and (min-width: $break-desktop-s) {
+        text-align: right;
+      }
       a {
         @media screen and (min-width: $break-desktop-s) {
           text-align: right;
@@ -144,19 +154,23 @@ body {
     /*** global g-nav flank right ***/
     .flank.right {
       right: 0;
-
-
     }
   }
 
   /*** global content ***/
-  .content {
+  .main.content {
     background: $content-background-color;
     z-index: 10;
     width: 100%;
     min-height: $break-mobile-m-height;
+    height: 100%;
     float: none;
+    overflow: hidden;
 
+    @media screen and (max-width: $break-mobile-m) {
+      overflow: auto;
+      padding-bottom: $l-footer-height;
+    }
     @media screen and (min-width: $break-mobile-l) {
       width: 75%;
       float: right;
@@ -165,40 +179,73 @@ body {
     @media screen and (min-width: $break-desktop-s) {
       width: 100%;
       float: none;
+      min-height: $break-desktop-m-height;
     }
 
     /*** global g-header ***/
     .g-header {
-      background: $dark-letu-blue;
+
+      height: $g-header-height;
       width: 100%;
-      min-height: 8.5rem;
-      height: 100%;
-      padding: 1.0rem;
+
+      background-color: $dark-letu-blue;
+
+      padding: 1.0rem 1.0rem 1.0rem 0;
       text-transform: uppercase;
+      margin-top: 0;
 
-      display: inline-block;
       position: relative;
-      overflow: hidden;
 
-      @media screen and (min-width: $break-desktop-s) {
-        // padding: 2.0rem 0 0;
-      }
+      // @media screen and (max-width: $break-mobile-m) {
+      //
+      //   margin-top: $l-header-height;
+      // }
 
       .g-title {
-        color: #ff0000;
+        color: $light-letu-blue;
+        width: 60%;
+        float: left;
+        .breadcrumbs {
+
+        }
+        h1 {
+          padding-left: 13px;
+          font-size: 1.8rem;
+
+          @media screen and (min-width: $break-mobile-m) and (max-width: $break-desktop-m) {
+            font-size: 2.4rem;
+          }
+          @media screen and (min-width: $break-desktop-m) {
+            font-size: 2.8rem;
+          }
+
+        }
       }
       .g-displays {
         float: right;
-        clear: right;
-
-        .g-message-display {
-          color: #aaaa00;
-        }
+        vertical-align: middle;
+        width: 40%;
+        display: block;
+        text-align: right;
 
         .g-hours-display {
-          color: $light-letu-blue;
+          color: $light-text;
+
+          font-size: 1.2rem;
+          @media screen and (min-width: $break-mobile-m) {
+            font-size: 1.4rem;
+          }
+        }
+        .g-message-display {
+          padding: 1rem 0;
+          color: $light-text;
         }
       }
+    }
+    .g-header:after {
+        content: " ";
+        display: block;
+        clear: both;
     }
 
     /*** global largeBanner ***/
@@ -210,7 +257,7 @@ body {
       height: $banner-height-mobile;
 
       @media screen and (min-width: $break-mobile-m) {
-        height: $banner-height-desktop + $header-height;
+        height: $banner-height-desktop + $g-header-height;
       }
 
       .banner-image {
@@ -275,6 +322,8 @@ body {
       @media screen and (min-width: $break-mobile-m) {
         margin: $icons-y-desktop auto;
         background: none;
+      }
+      @media screen and (min-width: $break-mobile-l) {
         position:absolute;
       }
 
@@ -282,12 +331,16 @@ body {
       .main-icons {
         padding: 1.0rem;
         margin-left: -4rem; // main-icons centering
+        overflow: hidden;
 
-        /*** global body-wrapper main-icons sets ***/
-        .sets {
+        /*** global body-wrapper main-icons resources ***/
+        .resources {
           li {
-            border: $icons-border-width solid $icons-sets-light-color;
-            box-shadow: -5px 7px $icons-sets-dark-color;
+            border: $icons-border-width solid $icons-resources-light-color;
+            box-shadow: -5px 7px $icons-resources-dark-color;
+          }
+          li:hover {
+            background: $icons-resources-light-color;
           }
         }
         /*** global body-wrapper main-icons info ***/
@@ -295,6 +348,9 @@ body {
           li {
             border: $icons-border-width solid $icons-info-light-color;
             box-shadow: -5px 7px $icons-info-dark-color;
+          }
+          li:hover {
+            background: $icons-info-light-color;
           }
         }
 
@@ -340,38 +396,54 @@ body {
             }
 
             a {
-              display: block;
-              text-align: left;
-              // padding: 0.3rem 3.0rem 0.9rem 3.0rem;
               vertical-align: center;
 
+              color: $global-font-color-dark;
+              float: left;
 
-              @media screen and (max-width: $break-mobile-s) {
-                font-size: 100%;
-                line-height: 100%;
+              padding: 0;
+              display: block;
+              text-align: left;
+              text-decoration: none;
+              margin: 0.6rem;
+
+
+              img {
+                margin: 0;
+                margin-right: 1rem;
               }
 
-              @media screen and (min-width: $break-mobile-m) {
-                text-align: center;
-                font-size: 150%;
-                line-height: 100%;
-                text-transform: uppercase;
-                vertical-align: center;
+              font-size: 1.6rem;
+              line-height: 100%;
+              text-transform: uppercase;
+              vertical-align: center;
+
+              @media screen and (min-width: $break-mobile-m)  and (max-width: $break-desktop-m) {
+                font-size: 1.2rem;
+              }
+
+              @media screen and (min-width: $break-desktop-l) {
+                font-size: 1.4rem;
               }
             }
           }
+
         }
       }
 
       /*** global body-wrapper main-icons listMenu ***/
       .page.container {
-        height: 100%;
         color: black;
+        background-color: white;
         position: relative;
+        height: 100%;
+
+
 
         top: $page-content-y-mobile;
+        padding: 0;
         @media screen and (min-width: $break-mobile-m) {
-          top: $page-content-y-desktop;
+          padding: 0 $page-content-outer-padding;
         }
 
         .page.content {
@@ -380,23 +452,31 @@ body {
           margin: 0;
           padding: 1rem;
           width: 100%;
+
+          padding: 0 $page-content-outer-padding;
+
           .page.header {
             // margin: 1rem;
           }
           .page.menu {
             width: 100%;
-            display: inline-flex;
 
-            .page.column {
-              width: 50%;
+            display: block;
+            @media screen and (min-width: $break-mobile-m) {
+              display: inline-flex;
             }
-            ul {
-
-              // @media screen and (max-width: $break-mobile-s) {
-              //   list-style: none;
-              //   margin-left: 25px;
-              //   margin-bottom: 25px;
-              // }
+            .page.column {
+              display: block;
+              width: 100%;
+              @media screen and (min-width: $break-mobile-m) {
+                width: 50%;
+              }
+              h2 {
+                font-size: 2.2rem;
+              }
+              .page.list {
+                line-height: $page-list-line-height;
+              }
             }
           }
         }
@@ -407,20 +487,68 @@ body {
 
 /*** footer ***/
 .g-footer {
-  visibility: hidden;
+  // visibility: hidden;
   background: $footer-background-color;
   color: $global-font-color-dark;
-  z-index: 1000;
-  bottom: 0;
-  position: relative;
-  height: $footer-height;
-  width: 100%;
-  clear: both;
-  //color: $footer_color;
 
+
+  position: relative;
+  // bottom: 0;
+  width: 100%;
+
+  height: $g-footer-height;
+  padding-bottom: $l-footer-height;
+
+  @media screen and (min-width: $break-mobile-l) and (max-width: $break-desktop-s) {
+    width: 75%;
+    float: right;
+  }
+  @media screen and (min-width: $break-desktop-s) {
+    z-index: 1000;
+  }
 
   /*** footer footer-content ***/
   .g-footer-content {
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    display: inline;
+
+    .social-media {
+      width: 30%;
+      float: left;
+      span {
+        vertical-align: middle;
+        color: $g-footer-light-color;
+        font-size: 3.0rem;
+        padding: 0 1rem;
+      }
+    }
+    .contact-us {
+      float: left;
+
+      font-size: 0.8rem;
+      display: inline;
+      width: 40%;
+
+      .letu-address {
+        float: left;
+        padding-right: 2.0rem;
+        // text-align: right;
+      }
+      .letu-contact {
+        display: inline;
+        float: left;
+      }
+    }
+    .website-policy {
+      width: 30%;
+      float: right;
+      text-align: right;
+      a {
+        vertical-align: baseline;
+      }
+    }
 
   }
 }
@@ -434,4 +562,6 @@ body {
 
 .vertical-line {
   border-left: 1px solid #eee;
+  padding: 1rem;
+  float: left;
 }

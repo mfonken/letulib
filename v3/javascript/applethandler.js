@@ -13,11 +13,11 @@ function getAllHours()
 {
   $.ajax({
     type: "get",
-    url: "http://25.21.121.18:8080/DynamicServlet/rest/HoursService/getAllHours",
+    url: "http://25.21.121.18:8080/LetuLibServlet/rest/HoursService/getAllHours",
     dataType: "xml",
     success: function(data) {parseHoursList(data);},
     error: function(xhr, status) {
-      //alert("Error retrieving schedules.");
+      alert("Error retrieving schedules.");
     }
   });
 }
@@ -78,7 +78,7 @@ function parseHoursList(xmlData)
   populateDaysList(hours);
 }
 
-function postAllDefaultHours()
+function postAllHours()
 {
   var s = "Unique buffer - \n\t";
   for(var i=0;i<unique_index;i++)
@@ -114,6 +114,7 @@ function postAllDefaultHours()
     xml += "</hours>";
   }
   /* Compose unique hours into hours list */
+  var valid = 1;
   for(i=0;i<unique_index;i++)
   {
     var date, start, end;
@@ -124,61 +125,70 @@ function postAllDefaultHours()
     var name_input = $(".event-name.event-name-"+old_id);
     name_input.attr("class", "event-name event-name-"+ new_id);
     var name = name_input.val();
-
-    var date_input = $(".time-picker-date.time-picker-" + old_id);
-    date_input.attr("class", "time-picker-date time-picker-"+ new_id + " hasDatepicker");
-    date = date_input.datepicker('getDate');
-    var month = date.getMonth();
-    var day = date.getDate();
-
-    var start_input = $(".time-picker-start.time-picker-" + old_id);
-    start_input.attr("class", "time-picker-start time-picker-"+ new_id + " ui-timepicker-input");
-    var end_input = $(".time-picker-end.time-picker-" + old_id);
-    end_input.attr("class", "time-picker-end time-picker-"+ new_id + " ui-timepicker-input");
-
-    console.log("Start: " + start_input.attr("class"));
-    if(start_input.val() == 'Closed' || start_input.val() == null)
+    console.log("Name is " + name);
+    if(name == "")
     {
-      start = -1;
-      end   = 0;
+      console.log("!");
+      name_input.attr("placeholder", "ENTER NAME, PLEASE");
+      valid = 0;
     }
     else
     {
-      start  = start_input.timepicker('getTime').getHours()*60;
-      start += start_input.timepicker('getTime').getMinutes();
-      end    = end_input.timepicker('getTime').getHours()*60;
-      end   += end_input.timepicker('getTime').getMinutes();
+      var date_input = $(".time-picker-date.time-picker-" + old_id);
+      date_input.attr("class", "time-picker-date time-picker-"+ new_id + " hasDatepicker");
+      date = date_input.datepicker('getDate');
+      var month = date.getMonth();
+      var day = date.getDate();
+
+      var start_input = $(".time-picker-start.time-picker-" + old_id);
+      start_input.attr("class", "time-picker-start time-picker-"+ new_id + " ui-timepicker-input");
+      var end_input = $(".time-picker-end.time-picker-" + old_id);
+      end_input.attr("class", "time-picker-end time-picker-"+ new_id + " ui-timepicker-input");
+
+      // console.log("Start: " + start_input.attr("class"));
+      if(start_input.val() == 'Closed' || start_input.val() == null)
+      {
+        start = -1;
+        end   = 0;
+      }
+      else
+      {
+        start  = start_input.timepicker('getTime').getHours()*60;
+        start += start_input.timepicker('getTime').getMinutes();
+        end    = end_input.timepicker('getTime').getHours()*60;
+        end   += end_input.timepicker('getTime').getMinutes();
+      }
+      xml += "<hours>";
+      xml += "<id>" + new_id + "</id>";
+      xml += "<title>" + name + "</title>";
+      xml += "<schedule>";
+      xml += "<open>" + start + "</open>";
+      xml += "<close>" + end + "</close>";
+      xml += "</schedule>";
+      xml += "<date>";
+      xml += "<month>" + month + "</month>";
+      xml += "<day>" + day + "</day>";
+      xml += "</date>";
+      xml += "</hours>";
     }
-    xml += "<hours>";
-    xml += "<id>" + new_id + "</id>";
-    xml += "<title>" + name + "</title>";
-    xml += "<schedule>";
-    xml += "<open>" + start + "</open>";
-    xml += "<close>" + end + "</close>";
-    xml += "</schedule>";
-    xml += "<date>";
-    xml += "<month>" + month + "</month>";
-    xml += "<day>" + day + "</day>";
-    xml += "</date>";
-    xml += "</hours>";
   }
   xml += "</hourss>";
 
-  // alert(xml);
+  if(!valid) return;
 
   $.ajax({
-    url: "http://localhost:8080/DynamicServlet/rest/HoursService/editAllHours",
+    url: "http://localhost:8080/LetuLibServlet/rest/HoursService/editAllHours",
     data: xml,
     type: 'POST',
     contentType: "application/xml",
     // dataType: "text",
     success : function (data){
-      // alert("Hours posted!");
+      alert("Hours posted!");
     },
     error : function (xhr, ajaxOptions, thrownError){
       console.log(xhr.status);
       console.log(thrownError);
-      // alert("Error posting hours.");
+      alert("Error posting hours.");
     }
   });
 }
@@ -223,7 +233,7 @@ function putBackUniqueHourUI() {
 
 
   console.log("Restoring id - " + id + " | unique_index is " + unique_index);
-  unique_buffer[unique_index++] = id;
+  unique_buffer[unique_index] = id;
 
   generateUniqueScheduleUI(id, hours, 0);
 
@@ -265,7 +275,7 @@ function generateUniqueScheduleUI(id, hours, blank)
 
   var name = $("<input/>")
   .addClass("event-name event-name-" + id)
-  .attr("placeholder", "Event " + (id-7))
+  .attr("placeholder", "Enter Name, Please")//"Event " + (id-7))
   .val(title)
   .appendTo(day);
 
@@ -294,23 +304,52 @@ function deleteUniqueScheduleUI(self)
 {
   var li = $(self).parent().parent();
   var this_id = li.attr("id");
-  console.log("Removing id - " + this_id + " | unique_index is " + unique_index);
+  // console.log("Removing id - " + this_id + " | unique_index is " + unique_index);
 
   var datepicker = $(self).siblings().eq(1);
-  console.log("datepicker class - " + datepicker.attr("class"));
+  // console.log("datepicker class - " + datepicker.attr("class"));
 
+  var date, start, end;
   undo_object.title = $(self).siblings().eq(0).val();
-  var date = $(self).siblings().eq(1).datepicker('getDate');
   undo_object.date = [];
-  undo_object.date[0] = date.getMonth();
-  undo_object.date[1] = date.getDate();
-  var start = $(self).siblings().eq(2).timepicker('getTime');
-  undo_object.schedule = [];
-  undo_object.schedule[0] = start.getHours()*60+start.getMinutes();
-  var end = $(self).siblings().eq(3).timepicker('getTime');
-  undo_object.schedule[1] = end.getHours()*60+end.getMinutes();
-  undo_object.id = $(self).parent().parent().attr("id");
+  try
+  {
+    date = $(self).siblings().eq(1).datepicker('getDate');
+    undo_object.date[0] = date.getMonth();
+    undo_object.date[1] = date.getDate();
+  }
+  catch(err)
+  {
+    undo_object.date[0] = null;
+    undo_object.date[1] = null;
+  }
 
+  undo_object.schedule = [];
+  try
+  {
+    start = $(self).siblings().eq(2).timepicker('getTime');
+    undo_object.schedule[0] = start.getHours()*60+start.getMinutes();
+  }
+  catch(err)
+  {
+    // console.log(">" + start);
+    if( start == null )
+    undo_object.schedule[0] = -1;
+    else
+    undo_object.schedule[0] = null;
+  }
+
+
+  try
+  {
+    end = $(self).siblings().eq(3).timepicker('getTime');
+    undo_object.schedule[1] = end.getHours()*60+end.getMinutes();
+  }
+  catch(err)
+  {
+    undo_object.schedule[1] = null;
+  }
+  undo_object.id = $(self).parent().parent().attr("id");
 
   li.remove();
 
@@ -391,16 +430,6 @@ function generateStartEndPair(i, start_time, end_time, element)
     'maxTime': '2:00am',
   })
   .timepicker('setTime', end_time)
-  .on('changeTime', function() {
-    if($(this).val() < $(".time-picker-" + i).val())
-    {
-      // $(this).background-color("#ff0000");
-    }
-    else
-    {
-      // $(this).background-color("none");
-    }
-  })
   .appendTo(element);
   if(start_time == 'Closed')
   {

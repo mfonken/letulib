@@ -1,6 +1,5 @@
 @import 'palette';
 
-/*** all ***/
 * {
   box-sizing: border-box;
 }
@@ -14,13 +13,13 @@ body {
   color: black;
 }
 
-.hours-applet-wrapper {
-  .hours-applet-content {
+.library-applet-wrapper {
+  .library-applet-content {
     h3 {
       margin: 0;
       margin-bottom: 1rem;
     }
-    .hours-applet-separator-line {
+    .library-applet-separator-line {
       display: block;
       height: 1px;
       border: 0;
@@ -29,13 +28,45 @@ body {
     }
 
 
-    .hours-applet-body {
+    .library-applet-body {
       width: 50%;
       border: 2px solid black;
       list-style: none;
       display: flex;
       flex-direction: column;
       padding: 2rem;
+
+      .live-message-editor {
+        float: left;
+        padding-left: 0;
+
+        h3 {
+          // padding-bottom: 1rem;
+        }
+
+        .message-input-div {
+          width: 100%;
+          display: inline;
+          .message-input-span {
+            float: left;
+            width: 80%;
+            .message-input {
+              width: 75%;
+              overflow-x: scroll;
+              padding-right: 0.6rem;
+              height: 2.8rem;
+            }
+          }
+
+          .color-input-span {
+            float: left;
+            width: 13%;
+            .color-input {
+              float: right;
+            }
+          }
+        }
+      }
 
       .default-hours-editor {
         float: left;
@@ -133,27 +164,32 @@ body {
           float: right;
         }
       }
-    }
-    .hours-list-apply-button {
-      position:relative;
-      // float: right;
 
-      background-color: white;
-      color: black;
+      .library-applet-footer {
+        display: inline;
+        .library-applet-info-button {
+          font-size: 2.2rem;
+          color: black;
+          float: left;
+        }
+        .library-applet-apply-button {
+          float: right;
+          position:relative;
 
-      width:5rem;
-      font-size: 0.8em;
-      vertical-align: bottom;
-      line-height: 1.4em;
+          background-color: white;
+          color: black;
 
-      border: 2px solid black;
-      box-shadow: -5px 7px black;
-      margin-left: auto;
-      margin-right: 0;
-    }
+          width:5rem;
+          font-size: 0.8em;
+          vertical-align: bottom;
+          line-height: 1.4em;
 
-    .hours-applet-footer {
-
+          border: 2px solid black;
+          box-shadow: -5px 7px black;
+          margin-left: auto;
+          margin-right: 0;
+        }
+      }
     }
   }
 }

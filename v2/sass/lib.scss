@@ -63,6 +63,7 @@ body {
       top: 0;
       height: 100%;
       text-align: left;
+
       @media screen and (min-width: $break-desktop-s) {
         position: absolute;
         top: 0;
@@ -144,8 +145,6 @@ body {
     /*** global g-nav flank right ***/
     .flank.right {
       right: 0;
-
-
     }
   }
 
