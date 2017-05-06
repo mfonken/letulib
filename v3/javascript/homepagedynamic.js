@@ -24,17 +24,27 @@ var infoContent =
 /***********************************************************/
 var leftMenuContent =
 [
-  [ "Hours", "hoursapplet.html", "fa fa-clock-o" ],
-  [ "Message", "messageapplet.html", "fa fa-commenting-o" ],
-  [ "Databases", "http://lib-guides.letu.edu/az.php", "fa fa-database"  ],
-  [ "Inter-Library Loan", "http://lib-guides.letu.edu/libraryservices/ill", "fa fa-map-o" ],
-  [ "Reset Applets", "reset.html", "fa fa-map-o" ]
+  [
+    ["#B86152"],
+    [ "Hours", "hoursapplet.html", "fa fa-clock-o" ],
+    [ "Message", "messageapplet.html", "fa fa-commenting-o" ],
+    [ "Databases", "http://lib-guides.letu.edu/az.php", "fa fa-database"  ],
+    [ "Inter-Library Loan", "http://lib-guides.letu.edu/libraryservices/ill", "fa fa-map-o" ],
+    [ "Reset Applets", "reset.html", "fa fa-map-o" ]
+  ]
 ];
 
 var rightMenuContent =
 [
-  [ "Ask a Librarian", "mailto:library@letu.edu?subject=Ask%20a%20Librarian", "fa fa-comments-o" ],
-  [ "LETU History", "/opencms/opencms/_Academics/library/history.html", "fa fa-bank"]
+  [
+    ["#8C9943"],
+    [ "Ask a Librarian", "mailto:library@letu.edu?subject=Ask%20a%20Librarian", "fa fa-comments-o" ],
+    [ "LETU History", "/opencms/opencms/_Academics/library/history.html", "fa fa-bank"]
+  ],
+  [
+    ["#556B2F"],
+    [ "Feedback", "javascript:toggleFeedbackForm()", "fa fa-thumbs-up"]
+  ]
 ];
 
 /***********************************************************/
@@ -59,6 +69,7 @@ var aboutListContent =
 $(document).ready(function() {
   populateDisplays();
   populateHomePageContent();
+  // $("feedback-form").hide();
 });
 
 function populateDisplays()
@@ -134,34 +145,53 @@ function populateHomePageContent()
       .prependTo(a);
   }
 
+  console.log(":[" + leftMenuContent.length + "]" + "[" + leftMenuContent[0].length + "]");
+  console.log(":[" + rightMenuContent.length + "]" + "[" + rightMenuContent[0].length + "]");
+
   var leftMenu = $(".menu.left");
   for(var i=0; i<leftMenuContent.length; i++)
   {
-      var li = $("<li/>")
-      .attr("id", "left-menu-"+i)
-      .appendTo(leftMenu);
-      var a = $("<a/>")
-      .attr("href", leftMenuContent[i][1])
-      .html(leftMenuContent[i][0])
-      .appendTo(li);
-      var span = $("<span/>")
-      .attr("class", leftMenuContent[i][2])
-      .prependTo(a);
+    for(var j=1; j<leftMenuContent[i].length; j++)
+    {
+        var li = $("<li/>")
+        .attr("id", "left-menu-"+j)
+        .appendTo(leftMenu);
+        var a = $("<a/>")
+        .attr("href", leftMenuContent[i][j][1])
+        .html(leftMenuContent[i][j][0])
+        .appendTo(li);
+        var span = $("<span/>")
+        .css("color", leftMenuContent[i][0][0])
+        .attr("class", leftMenuContent[i][j][2])
+        .prependTo(a);
+    }
+    if((i+1) < leftMenuContent.length)
+    {
+      $("<hr>").appendTo(leftMenu);
+    }
   }
 
   var rightMenu = $(".menu.right");
   for(var i=0; i<rightMenuContent.length; i++)
   {
-      var li = $("<li/>")
-      .attr("id", "right-menu-"+i)
-      .appendTo(rightMenu);
-      var a = $("<a/>")
-      .attr("href", rightMenuContent[i][1])
-      .html(rightMenuContent[i][0])
-      .appendTo(li);
-      var span = $("<span/>")
-      .attr("class", rightMenuContent[i][2])
-      .prependTo(a);
+    for(var j=1; j<rightMenuContent[i].length; j++)
+    {
+        var li = $("<li/>")
+        .attr("id", "right-menu-"+j)
+        .appendTo(rightMenu);
+        var a = $("<a/>")
+        .attr("href", rightMenuContent[i][j][1])
+        .html(rightMenuContent[i][j][0])
+        .appendTo(li);
+        var span = $("<span/>")
+        .css("color", rightMenuContent[i][0][0])
+        .attr("class", rightMenuContent[i][j][2])
+        .prependTo(a);
+    }
+    if((i+1) < rightMenuContent.length)
+    {
+      $("<hr>").appendTo(rightMenu);
+    }
   }
 
   var servicesList = $(".list.services");
