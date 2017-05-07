@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- jQuery Includes -->
+  <script src="https://www.w3schools.com/lib/w3data.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<!-- Letu Includes  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/8367295a-8a74-4d74-94fe-c13dd86b04dd.css"/>
+  <link href="http://www.letu.edu/opencms/export/system/modules/edu.letu.templates.main/resources/fontawesome-300/css/font-awesome.css" rel="stylesheet">
+  <link href="http://www.letu.edu/opencms/export/system/modules/edu.letu.templates.main/resources/css/letu-resp4.css" rel="stylesheet">
+
+
+<!-- Own Includes -->
+  <script type="text/javascript" src="../javascript/homepagedynamic.js"></script>
+  <script type="text/javascript" src="../javascript/feedbackHandler.js"></script>
+  <link type="text/css" rel="stylesheet" href="../stylesheets/lib.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <div class="l-header">
+    <div w3-include-html="header.html"></div>
+  </div>
+
+  <div class="global">
+    <div class="g-nav">
+      <div class="flank left">
+        <div class="inner">
+          <div class="guides">
+            <h2>Resources</h2>
+            <ul class="menu left">
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flank right">
+        <div class="inner">
+          <div class="info">
+            <h2>Help &amp Info</h2>
+            <ul class="menu right">
+            </ul>
+            <div w3-include-html="feedback_form.html" class="feedback-form-div"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main content">
+      <div class="g-header">
+        <div class="g-title">
+          <div class="breadcrumbs">
+            <a href="/">Home</a> <i class="icon-double-angle-right fontawesome" style="margin: 0px 5px;"></i> <a href="/_Academics/">Academics</a> <i class="icon-double-angle-right fontawesome" style="margin: 0px 5px;"></i> <a href="/_Academics/library/">Library</a>
+          </div>
+          <h1>
+            Margaret Estes Library
+          </h1>
+        </div>
+        <div class="g-displays">
+          <div class="g-hours-display">
+            <span class="hours-display"/>
+          </div>
+          <div class="g-message-display">
+            <span class="message-display"/>
+          </div>
+        </div>
+        <div style="clear:both"></div>
+      </div>
+      <div class="large-banner">
+        <div class="banner-image">
+        </div>
+        <form role="form" id="g-search-form" name="search-form" class="g-core-form" action="https://letulibrary.on.worldcat.org/search" method="get"  data-stat-page-section="Header" data-stat-link-type="CUSTOM" data-stat-name="Search Button" >
+          <div class="search-field" id="searchform">
+            <input type="hidden" id="dbList" name="databaseList" value=""/>
+            <input type="search" id="query" onblur="this.placeholder = 'What are you looking for?'" onfocus="this.placeholder = ''" data-autocomplete-source="/ajax/searchsuggest" data-autocomplete-query="term" data-action="autocomplete" data-stat-page-section="Header" data-stat-name="Primary Search Box" name="queryString" required autocomplete="off" autofocus/>
+            <button type="submit" id="headersubmit" class="core-button core-button-primary  headersubmit core-button-icon">
+              <img src="../images/catalog.png" width="20" height="20" />
+            </button>
+          </div>
+        </form>
+        <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+      </div>
+
+      <div class="body-wrapper">
+        <div class="main-icons">
+          <!-- POPULATED DYNAMICALLY IN "homepagedynamic.js" -->
+          <ul class="core resources">
+          </ul>
+          <ul class="core info">
+          </ul>
+        </div>
+        <div class="page container">
+          <hr>
+          <div class="page content row">
+            <div class="page header">
+              <!-- List menu. -->
+            </div>
+            <div class="page menu">
+              <div class="page column services">
+                <h2>Services</h2>
+                <ul class="page list services">
+                  <!-- Dynamic -->
+                </ul>
+              </div>
+              <div class="vertical-line">
+              </div>
+              <div class="page column about">
+                <h2>About the Library </h2>
+                <ul class="page list about">
+                  <!-- Dynamic -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="g-footer">
+      <div class="g-footer-content">
+        <div class="social-media">
+          <a href="#">
+            <span class="fa fa-facebook-square"/>
+          </a>
+          <a href="#">
+            <span class="fa fa-twitter-square"/>
+          </a>
+          <a href="#">
+            <span class="fa fa-google-plus-square"/>
+          </a>
+        </div>
+        <div class="contact-us">
+          <div class="letu-address">
+            Margaret Estes Library - LeTourneau University<br>
+            2100 S. Mobberly Ave<br>
+            Longview, TX 76502
+          </div>
+          <div class="vertical-line">
+          </div>
+          <div class="letu-contact">
+            903-233-3260<br>
+            library@letu.edu
+          </div>
+        </div>
+        <div class="website-policy">
+          <a href="http://www.letu.edu/opencms/opencms/privacy.html">Website Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="l-footer">
+    <div w3-include-html="footer.html"></div>
+  </div>
+
+  <script>
+  w3IncludeHTML();
+  </script>
+</body>

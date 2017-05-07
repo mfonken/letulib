@@ -1,0 +1,39 @@
+<form id="001" class="feedback-form" method="post" action="../javascript/feedbackHandler.js">
+	<div class="field">
+		<label for="name"><span class="icon-user"></span> <span class="text">Your name</span></label>
+		<input id="name" type="text" name="Name" />
+	</div>
+
+	<div class="field">
+		<label for="email"><span class="icon-envelope"></span> <span class="text">Your email address</span></label>
+		<input id="email" type="email" name="Email" />
+	</div>
+
+	<div class="field message">
+		<pre><span></span><br></pre>
+		<label for="comment"><span class="icon-bubble"></span> <span class="text">Your feedback/comment</span></label>
+		<textarea id="comment" class="required" name="Comment" cols="80" rows="10"></textarea>
+	</div>
+
+	<div class="field dropdown">
+		<label for="feedbackStatus"><span class="icon-profile"></span> <span class="text">Your status </span> <span class="arrow">&#9002;</span></label>
+		<select id="feedbackStatus" name="Status" class="required">
+			<option selected="selected"></option>
+			<option>Undergraduate</option>
+			<option>Graduate</option>
+			<option>Faculty</option>
+			<option>Staff</option>
+			<option>Library Employee</option>
+			<option>Other</option>
+		</select>
+	</div>
+
+	<div class="hidden">
+		<label for="frodo">Leave this blank</label>
+		<input id="frodo" type="text" name="::frodo" />
+		<label for="bilbo">Don't change this</label>
+		<input id="bilbo" type="text" value="http://" name="::bilbo" />
+	</div>
+
+	<input tabindex="6" type="submit" name="::Submit" value="Send">
+</form>

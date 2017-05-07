@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <script src="https://www.w3schools.com/lib/w3data.js"></script>
+  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/8367295a-8a74-4d74-94fe-c13dd86b04dd.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="http://www.letu.edu/opencms/export/system/modules/edu.letu.templates.main/resources/fontawesome-300/css/font-awesome.css" rel="stylesheet">
+  <link href="http://www.letu.edu/opencms/export/system/modules/edu.letu.templates.main/resources/css/letu-resp4.css" rel="stylesheet">
+
+<!-- TEST SOURCES START (Matthew Fonken)-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="http://localhost/letulib/v3/stylesheets/libraryappletstyle.css"/>
+
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="http://localhost/letulib/v3/javascript/messagehandler.js"></script>
+
+  <link rel="stylesheet" href="http://localhost/letulib/v3/stylesheets/colorPicker.css">
+  <script type="text/javascript" src="http://localhost/letulib/v3/javascript/jquery.colorPicker.min.js"></script>
+<!-- TEST SOURCES END -->
+
+</head>
+<body>
+  <div class="library-applet-wrapper">
+    <div class="library-applet-content">
+      <div class="library-applet-header">
+        <h2>
+          Message Manager
+        </h2>
+      </div>
+      <div class="library-applet-body">
+        <div class="live-message-editor">
+          <h3>
+            Live Message
+          </h3>
+          <div class="message-input-div">
+            <span class="message-input-span">
+              Message:
+              <input class="message-input"/>
+            </span>
+            <span class="color-input-span">
+              Color:
+              <div class="color-input">
+                <input class="color-picker"/>
+              </div>
+            </span>
+          </div>
+        </div>
+        <hr class="library-applet-separator-line"/>
+        <div class="library-applet-footer">
+          <a class="library-applet-info-button" href="http://localhost/letulib/v3/html/message_manager_help.html">
+            <span class="fa fa-info-circle"></span>
+          </a>
+          <button class="library-applet-apply-button" onclick="return postMessage();" type="submit" form="default-library-editor" value="Submit">Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<body>
